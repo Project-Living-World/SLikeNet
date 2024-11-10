@@ -17,10 +17,10 @@
 #if _RAKNET_SUPPORT_MessageFilter==1
 
 #include "slikenet/MessageFilter.h"
-#include "slikenet/assert.h"
+#include "..\include\slikenet\slikeAssert.h"
 #include "slikenet/GetTime.h"
 #include "slikenet/MessageIdentifiers.h"
-#include "slikenet/assert.h"
+#include "..\include\slikenet\slikeAssert.h"
 #include "slikenet/peerinterface.h"
 #include "slikenet/PacketizedTCP.h"
 #include "slikenet/BitStream.h"

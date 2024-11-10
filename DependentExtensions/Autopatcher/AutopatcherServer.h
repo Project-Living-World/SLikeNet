@@ -36,7 +36,7 @@
 #include "slikenet/PacketPriority.h"
 #include "slikenet/ThreadPool.h"
 #include "slikenet/BitStream.h"
-#include "slikenet/string.h"
+#include "..\..\Source\include\slikenet\slikeString.h"
 #include "slikenet/FileList.h"
 #include "slikenet/IncrementalReadInterface.h"
 

@@ -30,7 +30,7 @@
 #include "PacketPriority.h"
 #include "SocketIncludes.h"
 #include "DS_OrderedList.h"
-#include "string.h"
+#include "slikeString.h"
 #include "NatTypeDetectionCommon.h"
 
 namespace SLNet

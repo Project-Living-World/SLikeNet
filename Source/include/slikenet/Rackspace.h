@@ -26,7 +26,7 @@
 #include "DS_List.h"
 #include "types.h"
 #include "DS_Queue.h"
-#include "string.h"
+#include "slikeString.h"
 
 #ifndef __RACKSPACE_H
 #define __RACKSPACE_H

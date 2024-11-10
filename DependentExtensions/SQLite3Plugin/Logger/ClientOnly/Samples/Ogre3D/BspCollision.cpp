@@ -46,7 +46,7 @@ static const int num_rows = 3;
 #include "SQLiteClientLoggerPlugin.h"
 #include "slikenet/PacketizedTCP.h"
 #include "Ogre3D_DX9_BackbufferGrabber.h"
-#include "slikenet/time.h"
+#include "..\..\..\..\..\..\Source\include\slikenet\slikeTime.h"
 #include "slikenet/GetTime.h"
 
 // Event handler to add ability to alter curvature

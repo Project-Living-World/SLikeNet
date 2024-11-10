@@ -15,7 +15,7 @@
 
 #include "slikenet/socket2.h"
 #include "slikenet/memoryoverride.h"
-#include "slikenet/assert.h"
+#include "..\include\slikenet\slikeAssert.h"
 #include "slikenet/sleep.h"
 #include "slikenet/SocketDefines.h"
 #include "slikenet/GetTime.h"

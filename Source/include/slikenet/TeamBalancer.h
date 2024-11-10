@@ -30,7 +30,7 @@
 #include "memoryoverride.h"
 #include "NativeTypes.h"
 #include "DS_List.h"
-#include "string.h"
+#include "slikeString.h"
 
 namespace SLNet
 {

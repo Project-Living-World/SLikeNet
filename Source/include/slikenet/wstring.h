@@ -18,7 +18,7 @@
 
 #include "Export.h"
 #include "types.h" // int64_t
-#include "string.h"
+#include "slikeString.h"
 
 #ifdef _WIN32
 #include "WindowsIncludes.h"

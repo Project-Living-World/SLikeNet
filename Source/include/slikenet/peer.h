@@ -31,7 +31,7 @@
 #include "SimpleMutex.h"
 #include "DS_OrderedList.h"
 #include "Export.h"
-#include "string.h"
+#include "slikeString.h"
 #include "thread.h"
 //#include "socket.h"
 #include "smartptr.h"

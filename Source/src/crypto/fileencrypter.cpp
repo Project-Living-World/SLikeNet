@@ -1,5 +1,5 @@
 /*
- *  Copyright (c) 2018-2019, SLikeSoft UG (haftungsbeschr‰nkt)
+ *  Copyright (c) 2018-2019, SLikeSoft UG (haftungsbeschr√§nkt)
  *
  *  This source code is  licensed under the MIT-style license found in the license.txt
  *  file in the root directory of this source tree.
@@ -14,7 +14,7 @@
 #include <openssl/rsa.h> // used for RSA_xxxx
 
 #include "slikenet/crypto/cryptomanager.h" // used for SLNet::Experimental::Crypto::CCryptoManager
-#include "slikenet/assert.h"               // used for RakAssert
+#include "..\..\include\slikenet\slikeAssert.h"               // used for RakAssert
 
 #include "slikenet/linux_adapter.h" // used for strcpy_s
 #include "slikenet/osx_adapter.h"   // used for strcpy_s

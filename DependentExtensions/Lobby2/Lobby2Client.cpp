@@ -14,7 +14,7 @@
  */
 
 #include "Lobby2Client.h"
-#include "slikenet/assert.h"
+#include "..\..\Source\include\slikenet\slikeAssert.h"
 #include "slikenet/MessageIdentifiers.h"
 
 using namespace SLNet;

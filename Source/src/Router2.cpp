@@ -19,7 +19,7 @@
 #include "slikenet/Router2.h"
 #include "slikenet/peerinterface.h"
 #include "slikenet/BitStream.h"
-#include "slikenet/time.h"
+#include "..\include\slikenet\slikeTime.h"
 #include "slikenet/GetTime.h"
 #include "slikenet/DS_OrderedList.h"
 #include "slikenet/SocketLayer.h"

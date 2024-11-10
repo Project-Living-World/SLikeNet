@@ -26,7 +26,7 @@
 #include "slikenet/PacketPriority.h"
 #include "slikenet/types.h"
 #include "slikenet/BitStream.h"
-#include "slikenet/string.h"
+#include "..\..\Source\include\slikenet\slikeString.h"
 #include "slikenet/NetworkIDObject.h"
 #include "slikenet/DS_Hash.h"
 #include "slikenet/DS_OrderedList.h"

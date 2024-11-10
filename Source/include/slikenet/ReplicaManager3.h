@@ -25,7 +25,7 @@
 #define __REPLICA_MANAGER_3
 
 #include "types.h"
-#include "time.h"
+#include "slikeTime.h"
 #include "BitStream.h"
 #include "PacketPriority.h"
 #include "PluginInterface2.h"

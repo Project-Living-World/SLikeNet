@@ -21,7 +21,7 @@
 #include "defines.h"
 #include "Export.h"
 #include "SocketIncludes.h"
-#include "assert.h"
+#include "slikeAssert.h"
 #include "SocketDefines.h"
 #include "MTUSize.h"
 

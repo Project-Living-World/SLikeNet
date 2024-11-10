@@ -15,7 +15,7 @@
 
 #include "FSM.h"
 #include "State.h"
-#include "slikenet/assert.h"
+#include "..\..\Source\include\slikenet\slikeAssert.h"
 
 
 

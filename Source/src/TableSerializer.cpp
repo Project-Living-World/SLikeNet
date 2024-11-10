@@ -17,7 +17,7 @@
 #include "slikenet/DS_Table.h"
 #include "slikenet/BitStream.h"
 #include "slikenet/StringCompressor.h"
-#include "slikenet/assert.h"
+#include "..\include\slikenet\slikeAssert.h"
 
 using namespace SLNet;
 

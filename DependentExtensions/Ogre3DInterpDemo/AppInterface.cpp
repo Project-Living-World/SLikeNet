@@ -14,7 +14,7 @@
  */
 
 #include "AppInterface.h"
-#include "slikenet/assert.h"
+#include "..\..\Source\include\slikenet\slikeAssert.h"
 #include "FSM.h"
 #include "RunnableState.h"
 #include "slikenet/linux_adapter.h"

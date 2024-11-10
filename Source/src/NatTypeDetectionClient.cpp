@@ -20,7 +20,7 @@
 #include "slikenet/smartptr.h"
 #include "slikenet/BitStream.h"
 #include "slikenet/SocketIncludes.h"
-#include "slikenet/string.h"
+#include "..\include\slikenet\slikeString.h"
 #include "slikenet/peerinterface.h"
 #include "slikenet/MessageIdentifiers.h"
 #include "slikenet/SocketLayer.h"

@@ -9,7 +9,7 @@
  */
 
 #include "SQLiteClientLogger_RNSLogger.h"
-#include "slikenet/time.h"
+#include "..\..\..\..\..\Source\include\slikenet\slikeTime.h"
 #include "slikenet/GetTime.h"
 #include "slikenet/statistics.h"
 #include "slikenet/peerinterface.h"

@@ -29,7 +29,7 @@
 #include "PacketPriority.h"
 #include "SocketIncludes.h"
 #include "DS_List.h"
-#include "string.h"
+#include "slikeString.h"
 #include "DS_Queue.h"
 
 // Trendnet TEW-632BRP sometimes starts at port 1024 and increments sequentially.

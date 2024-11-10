@@ -29,7 +29,7 @@
 //#include "socket.h"
 #include "Export.h"
 #include "MTUSize.h"
-#include "string.h"
+#include "slikeString.h"
 
 //#include "ClientContextStruct.h"
 

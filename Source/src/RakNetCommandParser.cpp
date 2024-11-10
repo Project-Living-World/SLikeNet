@@ -20,7 +20,7 @@
 #include "slikenet/TransportInterface.h"
 #include "slikenet/peerinterface.h"
 #include "slikenet/BitStream.h"
-#include "slikenet/assert.h"
+#include "..\include\slikenet\slikeAssert.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>

@@ -17,7 +17,7 @@
 #include <stdlib.h>
 #include "Lobby2Client_Steam.h" // If Lobby2Client_Steam.h is included before SocketLayer.h, then it will use the steam send functions
 #include "Lobby2Message_Steam.h"
-#include "slikenet/time.h"
+#include "..\..\Source\include\slikenet\slikeTime.h"
 #include "slikenet/sleep.h"
 #include "slikenet/types.h"
 #include "slikenet/peerinterface.h"

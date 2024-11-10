@@ -27,7 +27,7 @@
 #include "slikenet/NetworkIDManager.h"
 #include "slikenet/sleep.h"
 #include "slikenet/FormatString.h"
-#include "slikenet/string.h"
+#include "..\..\Source\include\slikenet\slikeString.h"
 #include "slikenet/GetTime.h"
 #include "slikenet/SocketLayer.h"
 #include "slikenet/Getche.h"

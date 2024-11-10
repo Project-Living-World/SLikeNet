@@ -28,7 +28,7 @@
 #include "DS_Heap.h"
 #include "DS_Queue.h"
 #include "DS_Tree.h"
-#include "assert.h"
+#include "slikeAssert.h"
 #include "memoryoverride.h"
 #ifdef _DEBUG
 #include <stdio.h>

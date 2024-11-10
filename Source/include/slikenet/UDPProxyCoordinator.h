@@ -27,7 +27,7 @@
 #include "Export.h"
 #include "types.h"
 #include "PluginInterface2.h"
-#include "string.h"
+#include "slikeString.h"
 #include "BitStream.h"
 #include "DS_Queue.h"
 #include "DS_OrderedList.h"

@@ -14,7 +14,7 @@
  */
 
 #include "slikenet/DS_BytePool.h"
-#include "slikenet/assert.h"
+#include "..\include\slikenet\slikeAssert.h"
 #ifndef __APPLE__
 // Use stdlib and not malloc for compatibility
 #include <stdlib.h>

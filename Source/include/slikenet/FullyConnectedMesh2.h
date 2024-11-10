@@ -29,7 +29,7 @@
 #include "memoryoverride.h"
 #include "NativeTypes.h"
 #include "DS_List.h"
-#include "string.h"
+#include "slikeString.h"
 #include "BitStream.h"
 
 typedef int64_t FCM2Guid;

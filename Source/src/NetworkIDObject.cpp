@@ -19,7 +19,7 @@
 
 #include "slikenet/NetworkIDObject.h"
 #include "slikenet/NetworkIDManager.h"
-#include "slikenet/assert.h"
+#include "..\include\slikenet\slikeAssert.h"
 #include "slikenet/alloca.h"
 
 using namespace SLNet;

@@ -16,8 +16,8 @@
 #include "slikenet/DS_Table.h"
 #include "slikenet/DS_OrderedList.h"
 #include <string.h>
-#include "slikenet/assert.h"
-#include "slikenet/assert.h"
+#include "..\include\slikenet\slikeAssert.h"
+#include "..\include\slikenet\slikeAssert.h"
 #include "slikenet/Itoa.h"
 #include "slikenet/linux_adapter.h"
 #include "slikenet/osx_adapter.h"

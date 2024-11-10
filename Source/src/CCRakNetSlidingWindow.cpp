@@ -29,7 +29,7 @@ static const CCTimeType SYN=10000;
 #include <stdio.h>
 #include <cmath>
 #include <stdlib.h>
-#include "slikenet/assert.h"
+#include "..\include\slikenet\slikeAssert.h"
 #include "slikenet/alloca.h"
 
 using namespace SLNet;

@@ -19,7 +19,7 @@
 
 #include "slikenet/NetworkIDManager.h"
 #include "slikenet/NetworkIDObject.h"
-#include "slikenet/assert.h"
+#include "..\include\slikenet\slikeAssert.h"
 #include "slikenet/GetTime.h"
 #include "slikenet/sleep.h"
 #include "slikenet/SuperFastHash.h"

@@ -14,7 +14,7 @@
  */
 
 #include "slikenet/memoryoverride.h"
-#include "slikenet/assert.h"
+#include "..\include\slikenet\slikeAssert.h"
 #include <stdlib.h>
 
 #ifdef _RAKNET_SUPPORT_DL_MALLOC

@@ -14,7 +14,7 @@
  */
 
 #include "DSoundVoiceAdapter.h"
-#include "slikenet/assert.h"
+#include "..\..\Source\include\slikenet\slikeAssert.h"
 #include "slikenet/peerinterface.h"
 #include <tchar.h>
 

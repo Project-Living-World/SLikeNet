@@ -13,8 +13,8 @@
  *  license found in the license.txt file in the root directory of this source tree.
  */
 
-#include "slikenet/string.h"
-#include "slikenet/assert.h"
+#include "..\include\slikenet\slikeString.h"
+#include "..\include\slikenet\slikeAssert.h"
 #include "slikenet/memoryoverride.h"
 #include "slikenet/BitStream.h"
 #include <stdarg.h>
@@ -1573,7 +1573,7 @@ void RakString::UnlockMutex(void)
 }
 
 /*
-#include "slikenet/string.h"
+#include "slikenet/slikeString.h"
 #include <string>
 #include "slikenet/GetTime.h"
 

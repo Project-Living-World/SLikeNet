@@ -31,7 +31,7 @@
 #define __PHP_DIRECTORY_SERVER_2
 
 #include "slikenet/Export.h"
-#include "slikenet/string.h"
+#include "..\..\Source\include\slikenet\slikeString.h"
 #include "slikenet/HTTPConnection.h"
 #include "slikenet/types.h"
 #include "slikenet/DS_Queue.h"

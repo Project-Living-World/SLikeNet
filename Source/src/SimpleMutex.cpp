@@ -19,7 +19,7 @@
 
 
 #include "slikenet/SimpleMutex.h"
-#include "slikenet/assert.h"
+#include "..\include\slikenet\slikeAssert.h"
 
 using namespace SLNet;
 

@@ -47,7 +47,7 @@
 #include "PluginInterface2.h"
 #include "memoryoverride.h"
 #include "NativeTypes.h"
-#include "string.h"
+#include "slikeString.h"
 #include "DS_Hash.h"
 #include "DS_Queue.h"
 

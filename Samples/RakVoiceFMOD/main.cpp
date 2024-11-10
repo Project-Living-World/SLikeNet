@@ -30,7 +30,7 @@
 #include "RakVoice.h"
 #include "slikenet/statistics.h"
 #include "slikenet/GetTime.h"
-#include "slikenet/assert.h"
+#include "..\..\Source\include\slikenet\slikeAssert.h"
 #include "slikenet/linux_adapter.h"
 #include "slikenet/osx_adapter.h"
 

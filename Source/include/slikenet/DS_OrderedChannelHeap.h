@@ -26,7 +26,7 @@
 #include "DS_Map.h"
 #include "DS_Queue.h"
 #include "Export.h"
-#include "assert.h"
+#include "slikeAssert.h"
 #include "Rand.h"
 
 /// The namespace DataStructures was only added to avoid compiler errors for commonly named data structures

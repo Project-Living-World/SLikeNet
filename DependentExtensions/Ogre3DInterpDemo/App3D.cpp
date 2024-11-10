@@ -16,7 +16,7 @@
 #include "App3D.h"
 
 #include "Ogre.h"
-#include "slikenet/assert.h"
+#include "..\..\Source\include\slikenet\slikeAssert.h"
 #include "slikenet/FormatString.h"
 #include <stdio.h>
 #include <string.h>

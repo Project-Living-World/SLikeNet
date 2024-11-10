@@ -28,7 +28,7 @@
 #include "types.h"
 #include "PluginInterface2.h"
 #include "UDPForwarder.h"
-#include "string.h"
+#include "slikeString.h"
 
 namespace SLNet
 {

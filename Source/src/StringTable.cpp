@@ -15,7 +15,7 @@
 
 #include "slikenet/StringTable.h"
 #include <string.h>
-#include "slikenet/assert.h"
+#include "..\include\slikenet\slikeAssert.h"
 #include <stdio.h>
 #include "slikenet/BitStream.h"
 #include "slikenet/StringCompressor.h"

@@ -26,7 +26,7 @@
 static DataStructures::List< _findinfo_t* > fileInfo;
 	
 #include "slikenet/memoryoverride.h"
-#include "slikenet/assert.h"
+#include "slikenet/slikeAssert.h"
 
 /**
 * _findfirst - equivalent

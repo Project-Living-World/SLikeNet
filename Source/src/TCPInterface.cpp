@@ -35,9 +35,9 @@
 #include <pthread.h>
 #endif
 #include <string.h>
-#include "slikenet/assert.h"
+#include "..\include\slikenet\slikeAssert.h"
 #include <stdio.h>
-#include "slikenet/assert.h"
+#include "..\include\slikenet\slikeAssert.h"
 #include "slikenet/sleep.h"
 #include "slikenet/StringCompressor.h"
 #include "slikenet/StringTable.h"

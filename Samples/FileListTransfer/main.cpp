@@ -21,7 +21,7 @@
 #include "slikenet/FileListTransferCBInterface.h"
 #include "slikenet/FileOperations.h"
 #include "slikenet/SuperFastHash.h"
-#include "slikenet/assert.h"
+#include "..\..\Source\include\slikenet\slikeAssert.h"
 #include "slikenet/BitStream.h"
 #include "slikenet/IncrementalReadInterface.h"
 #include "slikenet/PacketizedTCP.h"

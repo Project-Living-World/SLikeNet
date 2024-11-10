@@ -37,7 +37,7 @@
 // RakNet includes
 #include "slikenet/GetTime.h"
 #include "slikenet/sleep.h"
-#include "slikenet/assert.h"
+#include "..\..\Source\include\slikenet\slikeAssert.h"
 #include "slikenet/StringTable.h"
 #include "slikenet/peerinterface.h"
 

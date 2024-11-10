@@ -28,7 +28,7 @@
 #include "PluginInterface2.h"
 #include "memoryoverride.h"
 #include "NativeTypes.h"
-#include "string.h"
+#include "slikeString.h"
 #include "DS_Hash.h"
 #include "CloudCommon.h"
 #include "DS_OrderedList.h"

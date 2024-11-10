@@ -15,7 +15,7 @@
 
 #include "ProfanityFilter.h"
 #include "slikenet/Rand.h"
-#include "slikenet/assert.h"
+#include "..\..\..\Source\include\slikenet\slikeAssert.h"
 #include "slikenet/LinuxStrings.h"
 #include "slikenet/linux_adapter.h"
 #include "slikenet/osx_adapter.h"

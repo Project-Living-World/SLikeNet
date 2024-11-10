@@ -17,7 +17,7 @@
 ///
 
 #include "slikenet/types.h"
-#include "slikenet/assert.h"
+#include "..\include\slikenet\slikeAssert.h"
 #include <string.h>
 #include <stdio.h>
 #include "slikenet/WindowsIncludes.h"

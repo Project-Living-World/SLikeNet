@@ -24,7 +24,7 @@
 #include <stdio.h>
 #include "slikenet/Kbhit.h"
 #include "slikenet/GetTime.h"
-#include "slikenet/assert.h"
+#include "..\..\Source\include\slikenet\slikeAssert.h"
 #include "slikenet/sleep.h"
 #include "slikenet/Gets.h"
 #include "slikenet/linux_adapter.h"

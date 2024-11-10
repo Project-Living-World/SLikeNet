@@ -22,7 +22,7 @@
 #define __GET_TIME_H
 
 #include "Export.h"
-#include "time.h" // For SLNet::TimeMS
+#include "slikeTime.h" // For SLNet::TimeMS
 
 namespace SLNet
 {

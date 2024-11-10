@@ -23,8 +23,8 @@
 #include "slikenet/TCPInterface.h"
 #include "slikenet/HTTPConnection.h"
 #include "slikenet/sleep.h"
-#include "slikenet/string.h"
-#include "slikenet/assert.h"
+#include "..\include\slikenet\slikeString.h"
+#include "..\include\slikenet\slikeAssert.h"
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>

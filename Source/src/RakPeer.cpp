@@ -50,7 +50,7 @@
 #include "slikenet/types.h"
 #include "slikenet/DR_SHA1.h"
 #include "slikenet/sleep.h"
-#include "slikenet/assert.h"
+#include "..\include\slikenet\slikeAssert.h"
 #include "slikenet/version.h"
 #include "slikenet/NetworkIDManager.h"
 #include "slikenet/gettimeofday.h"

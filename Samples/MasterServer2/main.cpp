@@ -62,7 +62,7 @@ void main_sockets(void)
 }
 
 #include "slikenet/TCPInterface.h"
-#include "slikenet/string.h"
+#include "..\..\Source\include\slikenet\slikeString.h"
 #include "slikenet/sleep.h"
 #include "jansson.h"
 #include "slikenet/GetTime.h"

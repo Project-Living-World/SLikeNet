@@ -18,8 +18,8 @@
 
 #include "slikenet/BitStream.h"
 #include "Lobby2ResultCode.h"
-#include "slikenet/string.h"
-#include "slikenet/assert.h"
+#include "..\..\Source\include\slikenet\slikeString.h"
+#include "..\..\Source\include\slikenet\slikeAssert.h"
 #include "slikenet/smartptr.h"
 #include "slikenet/SimpleMutex.h"
 #include "Lobby2Presence.h"

@@ -17,7 +17,7 @@
 #if _RAKNET_SUPPORT_Rackspace==1 && _RAKNET_SUPPORT_TCPInterface==1
 
 #include "slikenet/Rackspace.h"
-#include "slikenet/string.h"
+#include "..\include\slikenet\slikeString.h"
 #include "slikenet/TCPInterface.h"
 
 using namespace SLNet;

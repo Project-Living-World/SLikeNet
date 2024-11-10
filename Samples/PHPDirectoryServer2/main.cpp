@@ -21,7 +21,7 @@
 #include "slikenet/HTTPConnection.h"
 #include "PHPDirectoryServer2.h"
 #include "slikenet/sleep.h"
-#include "slikenet/string.h"
+#include "..\..\Source\include\slikenet\slikeString.h"
 #include "slikenet/GetTime.h"
 #include "slikenet/DS_Table.h"
 #include <cstring>

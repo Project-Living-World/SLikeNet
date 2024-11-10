@@ -21,7 +21,7 @@
 #endif
 
 #include "slikenet/PacketOutputWindowLogger.h"
-#include "slikenet/string.h"
+#include "..\include\slikenet\slikeString.h"
 #if defined(_WIN32)
 #include "slikenet/WindowsIncludes.h"
 #endif

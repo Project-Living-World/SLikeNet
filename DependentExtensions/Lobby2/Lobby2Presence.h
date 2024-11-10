@@ -16,7 +16,7 @@
 #ifndef __LOBBY_2_PRESENCE_H
 #define __LOBBY_2_PRESENCE_H
 
-#include "slikenet/string.h"
+#include "..\..\Source\include\slikenet\slikeString.h"
 
 
 

@@ -14,7 +14,7 @@
  */
 
 #include "Lobby2Server.h"
-#include "slikenet/assert.h"
+#include "..\..\Source\include\slikenet\slikeAssert.h"
 #include "slikenet/MessageIdentifiers.h"
 
 //#define __INTEGRATE_LOBBY2_WITH_ROOMS_PLUGIN

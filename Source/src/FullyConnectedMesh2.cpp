@@ -23,7 +23,7 @@
 #include "slikenet/FullyConnectedMesh2.h"
 #include "slikenet/peerinterface.h"
 #include "slikenet/MessageIdentifiers.h"
-#include "slikenet/assert.h"
+#include "..\include\slikenet\slikeAssert.h"
 #include "slikenet/GetTime.h"
 #include "slikenet/Rand.h"
 #include "slikenet/DS_OrderedList.h"

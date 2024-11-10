@@ -14,7 +14,7 @@
  */
 
 #include "slikenet/SignaledEvent.h"
-#include "slikenet/assert.h"
+#include "..\include\slikenet\slikeAssert.h"
 #include "slikenet/sleep.h"
 
 #if defined(__GNUC__) 

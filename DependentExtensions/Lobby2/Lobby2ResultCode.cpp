@@ -14,7 +14,7 @@
  */
 
 #include "Lobby2ResultCode.h"
-#include "slikenet/assert.h"
+#include "..\..\Source\include\slikenet\slikeAssert.h"
 
 using namespace SLNet;
 

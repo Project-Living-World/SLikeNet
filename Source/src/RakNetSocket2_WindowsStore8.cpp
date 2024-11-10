@@ -24,7 +24,7 @@
 
 #include <ppltasks.h>
 #include <collection.h>
-#include "slikenet/string.h"
+#include "slikenet/slikeString.h"
 #include "slikenet/linux_adapter.h"
 #include "slikenet/osx_adapter.h"
 

@@ -22,7 +22,7 @@
 #include "slikenet/GetTime.h"
 #include "slikenet/SocketLayer.h"
 #include "slikenet/PluginInterface2.h"
-#include "slikenet/assert.h"
+#include "..\include\slikenet\slikeAssert.h"
 #include "slikenet/Rand.h"
 #include "slikenet/MessageIdentifiers.h"
 #ifdef USE_THREADED_SEND

@@ -17,7 +17,7 @@
 
 #include "slikenet/NetworkIDManager.h"
 #include "CDemo.h"
-#include "slikenet/time.h"
+#include "..\..\Source\include\slikenet\slikeTime.h"
 #include "slikenet/GetTime.h"
 #include "slikenet/SocketLayer.h"
 #include "slikenet/linux_adapter.h"

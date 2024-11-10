@@ -25,9 +25,9 @@
 #include "defines.h"
 #include "Export.h"
 #include "types.h"
-#include "string.h"
+#include "slikeString.h"
 #include "wstring.h"
-#include "assert.h"
+#include "slikeAssert.h"
 #include <cmath>
 #include <float.h>
 

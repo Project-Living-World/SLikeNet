@@ -25,7 +25,7 @@
 #include "DS_OrderedList.h"
 #include "BitStream.h"
 #include "memoryoverride.h"
-#include "assert.h"
+#include "slikeAssert.h"
 
 namespace DataStructures
 {

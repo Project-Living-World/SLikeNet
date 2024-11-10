@@ -25,7 +25,7 @@
 #include "slikenet/sleep.h"
 #include "slikenet/GetTime.h"
 #include "slikenet/Rand.h"
-#include "slikenet/assert.h"
+#include "..\..\Source\include\slikenet\slikeAssert.h"
 #include "slikenet/SocketLayer.h"
 #include "slikenet/Getche.h"
 #include "slikenet/Gets.h"

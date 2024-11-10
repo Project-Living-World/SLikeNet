@@ -18,7 +18,7 @@
 #if _RAKNET_SUPPORT_FileOperations==1
 
 #include <stdio.h> // RAKNET_DEBUG_PRINTF
-#include "slikenet/assert.h"
+#include "..\include\slikenet\slikeAssert.h"
 #if defined(ANDROID)
 #include <asm/io.h>
 #elif defined(_WIN32) || defined(__CYGWIN__)
@@ -45,7 +45,7 @@
 #include "slikenet/BitStream.h"
 #include "slikenet/FileOperations.h"
 #include "slikenet/SuperFastHash.h"
-#include "slikenet/assert.h"
+#include "..\include\slikenet\slikeAssert.h"
 #include "slikenet/LinuxStrings.h"
 #include "slikenet/linux_adapter.h"
 #include "slikenet/osx_adapter.h"

@@ -73,8 +73,8 @@ const float BALL_DIAMETER=25.0f;
 // SLikeNet
 #include "slikenetstuff.h"
 #include "slikenet/DS_Multilist.h"
-#include "slikenet/string.h"
-#include "slikenet/time.h"
+#include "..\..\Source\include\slikenet\slikeString.h"
+#include "..\..\Source\include\slikenet\slikeTime.h"
 
 class CDemo : public IEventReceiver
 {

@@ -20,7 +20,7 @@
 #include "slikenet/Gets.h"
 
 #include "slikenet/TCPInterface.h"
-#include "slikenet/string.h"
+#include "..\..\Source\include\slikenet\slikeString.h"
 #include "slikenet/sleep.h"
 #include "slikenet/DR_SHA1.h"
 #include "slikenet/BitStream.h"

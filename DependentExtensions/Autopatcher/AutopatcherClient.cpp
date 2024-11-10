@@ -28,7 +28,7 @@
 //#include "slikenet/DR_SHA1.h"
 #include <stdio.h>
 #include "slikenet/FileOperations.h"
-#include "slikenet/assert.h"
+#include "..\..\Source\include\slikenet\slikeAssert.h"
 #include "slikenet/ThreadPool.h"
 #include "slikenet/linux_adapter.h"
 #include "slikenet/osx_adapter.h"

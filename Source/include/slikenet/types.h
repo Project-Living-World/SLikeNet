@@ -21,7 +21,7 @@
 
 #include "defines.h"
 #include "NativeTypes.h"
-#include "time.h"
+#include "slikeTime.h"
 #include "Export.h"
 #include "WindowsIncludes.h"
 #include "XBox360Includes.h"

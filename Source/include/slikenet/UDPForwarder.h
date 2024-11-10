@@ -30,7 +30,7 @@
 #include "SocketIncludes.h"
 #include "UDPProxyCommon.h"
 #include "SimpleMutex.h"
-#include "string.h"
+#include "slikeString.h"
 #include "thread.h"
 #include "DS_Queue.h"
 #include "DS_OrderedList.h"

@@ -22,7 +22,7 @@
 #ifndef __SINGLE_PRODUCER_CONSUMER_H
 #define __SINGLE_PRODUCER_CONSUMER_H
 
-#include "assert.h"
+#include "slikeAssert.h"
 
 static const int MINIMUM_LIST_SIZE=8;
 

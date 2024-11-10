@@ -21,8 +21,8 @@
 #include "slikenet/StringCompressor.h"
 #include "slikenet/DS_HuffmanEncodingTree.h"
 #include "slikenet/BitStream.h"
-#include "slikenet/string.h"
-#include "slikenet/assert.h"
+#include "..\include\slikenet\slikeString.h"
+#include "..\include\slikenet\slikeAssert.h"
 #include <string.h>
 
 #include <memory.h>

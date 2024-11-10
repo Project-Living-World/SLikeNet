@@ -14,7 +14,7 @@
  */
 
 #include "slikenet/thread.h"
-#include "slikenet/assert.h"
+#include "..\include\slikenet\slikeAssert.h"
 #include "slikenet/defines.h"
 #include "slikenet/sleep.h"
 #include "slikenet/memoryoverride.h"

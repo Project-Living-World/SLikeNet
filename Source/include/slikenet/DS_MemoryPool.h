@@ -24,7 +24,7 @@
 // Use stdlib and not malloc for compatibility
 #include <stdlib.h>
 #endif
-#include "assert.h"
+#include "slikeAssert.h"
 #include "Export.h"
 
 #include "memoryoverride.h"

@@ -18,7 +18,7 @@
 ///
 
 #include "slikenet/SocketLayer.h"
-#include "slikenet/assert.h"
+#include "..\include\slikenet\slikeAssert.h"
 #include "slikenet/types.h"
 #include "slikenet/peer.h"
 #include "slikenet/GetTime.h"

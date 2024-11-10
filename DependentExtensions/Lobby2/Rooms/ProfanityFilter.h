@@ -17,7 +17,7 @@
 #define __PROFANITY_FILTER__H__
 
 #include "slikenet/DS_List.h"
-#include "slikenet/string.h"
+#include "..\..\..\Source\include\slikenet\slikeString.h"
 
 namespace SLNet {
 

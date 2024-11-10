@@ -15,7 +15,7 @@
 
 #include "RPC3.h"
 #include "slikenet/memoryoverride.h"
-#include "slikenet/assert.h"
+#include "..\..\Source\include\slikenet\slikeAssert.h"
 #include "slikenet/StringCompressor.h"
 #include "slikenet/BitStream.h"
 #include "slikenet/peerinterface.h"

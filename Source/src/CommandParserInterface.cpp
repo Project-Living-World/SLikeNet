@@ -16,7 +16,7 @@
 #include "slikenet/CommandParserInterface.h"
 #include "slikenet/TransportInterface.h"
 #include <string.h>
-#include "slikenet/assert.h"
+#include "..\include\slikenet\slikeAssert.h"
 #include <stdio.h>
 
 

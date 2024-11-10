@@ -28,7 +28,7 @@
 #include "slikenet/PacketPriority.h"
 #include "slikenet/SocketIncludes.h"
 #include "slikenet/DS_Multilist.h"
-#include "slikenet/string.h"
+#include "..\..\Source\include\slikenet\slikeString.h"
 #include "SQLite3PluginCommon.h"
 
 class RakPeerInterface;

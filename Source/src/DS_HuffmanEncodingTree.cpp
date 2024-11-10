@@ -16,7 +16,7 @@
 #include "slikenet/DS_HuffmanEncodingTree.h"
 #include "slikenet/DS_Queue.h"
 #include "slikenet/BitStream.h"
-#include "slikenet/assert.h" 
+#include "..\include\slikenet\slikeAssert.h" 
 
 using namespace SLNet;
 

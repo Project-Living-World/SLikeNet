@@ -1,12 +1,12 @@
 /*
-*  Copyright (c) 2019, SLikeSoft UG (haftungsbeschr‰nkt)
+*  Copyright (c) 2019, SLikeSoft UG (haftungsbeschr√§nkt)
 *
 *  This source code is  licensed under the MIT-style license found in the license.txt
 *  file in the root directory of this source tree.
 */
 #include "slikenet/crypto/cryptomanager.h"
 
-#include "slikenet/assert.h" // used for RakAssert
+#include "..\..\include\slikenet\slikeAssert.h" // used for RakAssert
 #include <limits>            // used for std::numeric_limits<>
 
 // prevent max/min macros getting defined (breaking numeric_limits<>::max() / ::min() usage) through the indirect windows.h include in the OpenSSL includes
@@ -39,7 +39,6 @@ namespace SLNet
 				// RAND_screen() is only required on Windows - on Linux RAND_poll() will be used (called implicitly by the following RAND_bytes()-call) and
 				// provides OS-specific entropy quality.
 				// #high - replace with EGADS
-				RAND_screen();
 #endif
 
 				if (RAND_bytes(m_sessionKey, EVP_MAX_KEY_LENGTH) == 0) {

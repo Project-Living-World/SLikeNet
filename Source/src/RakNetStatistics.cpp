@@ -21,7 +21,7 @@
 #include "slikenet/statistics.h"
 #include <stdio.h> // sprintf
 #include "slikenet/GetTime.h"
-#include "slikenet/string.h"
+#include "..\include\slikenet\slikeString.h"
 #include "slikenet/linux_adapter.h"
 #include "slikenet/osx_adapter.h"
 

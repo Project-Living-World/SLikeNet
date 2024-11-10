@@ -21,7 +21,7 @@
 #define __CONGESTION_CONTROL_UDT_H
 
 #include "NativeTypes.h"
-#include "time.h"
+#include "slikeTime.h"
 #include "types.h"
 #include "DS_Queue.h"
 

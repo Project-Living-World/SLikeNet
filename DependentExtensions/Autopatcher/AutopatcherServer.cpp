@@ -27,7 +27,7 @@
 #include "slikenet/BitStream.h"
 #include "slikenet/MessageIdentifiers.h"
 #include "slikenet/AutopatcherRepositoryInterface.h"
-#include "slikenet/assert.h"
+#include "..\..\Source\include\slikenet\slikeAssert.h"
 #include "slikenet/AutopatcherPatchContext.h"
 #include <stdio.h>
 #include <time.h>

@@ -23,7 +23,7 @@
 #ifndef __LIST_H
 #define __LIST_H 
 
-#include "assert.h"
+#include "slikeAssert.h"
 #include <string.h> // memmove
 #include "Export.h"
 #include "memoryoverride.h"

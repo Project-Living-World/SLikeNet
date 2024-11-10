@@ -15,7 +15,7 @@
 
 #include "RoomsContainer.h"
 #include "ProfanityFilter.h"
-#include "slikenet/assert.h"
+#include "..\..\..\Source\include\slikenet\slikeAssert.h"
 #include "slikenet/GetTime.h"
 #include "slikenet/BitStream.h"
 #include "slikenet/TableSerializer.h"

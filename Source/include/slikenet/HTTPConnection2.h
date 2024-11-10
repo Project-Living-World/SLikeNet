@@ -24,7 +24,7 @@
 #define __HTTP_CONNECTION_2
 
 #include "Export.h"
-#include "string.h"
+#include "slikeString.h"
 #include "memoryoverride.h"
 #include "types.h"
 #include "DS_List.h"

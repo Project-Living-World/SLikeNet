@@ -29,7 +29,7 @@
 #include "DS_List.h"
 #include "types.h"
 #include "DS_OrderedList.h"
-#include "string.h"
+#include "slikeString.h"
 #include "DS_Queue.h"
 #include "DS_Hash.h"
 #include <float.h>

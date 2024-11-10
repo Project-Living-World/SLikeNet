@@ -17,7 +17,7 @@
 #include "slikenet/BitStream.h"
 #include "RoomsErrorCodes.h"
 #include "slikenet/TableSerializer.h"
-#include "slikenet/assert.h"
+#include "..\..\..\Source\include\slikenet\slikeAssert.h"
 #include "slikenet/MessageIdentifiers.h"
 #include "slikenet/peerinterface.h"
 #include "ProfanityFilter.h"

@@ -28,10 +28,10 @@
 #include "PHPDirectoryServer2.h"
 #include "slikenet/HTTPConnection.h"
 #include "slikenet/sleep.h"
-#include "slikenet/string.h"
+#include "..\..\Source\include\slikenet\slikeString.h"
 #include "slikenet/types.h"
 #include "slikenet/GetTime.h"
-#include "slikenet/assert.h"
+#include "..\..\Source\include\slikenet\slikeAssert.h"
 #include <cstring>
 #include <cstdlib>
 #include <cstdio>

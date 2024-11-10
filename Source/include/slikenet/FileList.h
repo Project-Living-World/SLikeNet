@@ -28,7 +28,7 @@
 #include "memoryoverride.h"
 #include "types.h"
 #include "FileListNodeContext.h"
-#include "string.h"
+#include "slikeString.h"
 
 namespace SLNet
 {

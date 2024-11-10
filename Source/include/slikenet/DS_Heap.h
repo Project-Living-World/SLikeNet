@@ -26,7 +26,7 @@
 #include "memoryoverride.h"
 #include "DS_List.h"
 #include "Export.h"
-#include "assert.h"
+#include "slikeAssert.h"
 
 #ifdef _MSC_VER
 #pragma warning( push )

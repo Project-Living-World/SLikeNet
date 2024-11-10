@@ -17,7 +17,7 @@
 #define __SQL_LITE_3_PLUGIN_COMMON_H
 
 #include "slikenet/DS_Multilist.h"
-#include "slikenet/string.h"
+#include "..\..\Source\include\slikenet\slikeString.h"
 #include "slikenet/BitStream.h"
 
 /// \defgroup SQL_LITE_3_PLUGIN SQLite3Plugin

@@ -23,7 +23,7 @@
 #define __QUEUE_H
 
 // Template classes have to have all the code in the header file
-#include "assert.h"
+#include "slikeAssert.h"
 #include "Export.h"
 #include "memoryoverride.h"
 

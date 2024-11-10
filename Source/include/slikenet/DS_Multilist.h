@@ -21,7 +21,7 @@
 #ifndef __MULTILIST_H
 #define __MULTILIST_H 
 
-#include "assert.h"
+#include "slikeAssert.h"
 #include <string.h> // memmove
 #include "Export.h"
 #include "memoryoverride.h"

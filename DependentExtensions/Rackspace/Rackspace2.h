@@ -23,7 +23,7 @@
 #include "slikenet/Export.h"
 #include "slikenet/types.h"
 #include "slikenet/DS_Queue.h"
-#include "slikenet/string.h"
+#include "..\..\Source\include\slikenet\slikeString.h"
 #include "jansson.h"
 
 #ifndef __RACKSPACE_2_H

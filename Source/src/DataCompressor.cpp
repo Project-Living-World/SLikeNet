@@ -15,8 +15,8 @@
 
 #include "slikenet/DataCompressor.h"
 #include "slikenet/DS_HuffmanEncodingTree.h"
-#include "slikenet/assert.h"
-#include <string.h> // Use string.h rather than memory.h for a console
+#include "..\include\slikenet\slikeAssert.h"
+#include <string.h> // Use slikeString.h rather than memory.h for a console
 
 using namespace SLNet;
 
