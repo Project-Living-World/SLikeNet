@@ -56,7 +56,7 @@
 #include "slikenet/gettimeofday.h"
 #include "slikenet/SignaledEvent.h"
 #include "slikenet/SuperFastHash.h"
-#include "slikenet/alloca.h"
+#include "..\include\slikenet\slikeAlloca.h"
 #include "slikenet/WSAStartupSingleton.h"
 #include "slikenet/linux_adapter.h"
 #include "slikenet/osx_adapter.h"

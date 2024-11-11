@@ -32,7 +32,7 @@
 
 
 
-#include "alloca.h"
+#include "slikeAlloca.h"
 
 // #if _USE_RAK_MEMORY_OVERRIDE==1
 // 	#if defined(new)

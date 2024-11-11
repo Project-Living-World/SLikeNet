@@ -24,7 +24,7 @@
 #include <stdlib.h>
 //#include <memory.h>
 #include "slikenet/slikeAssert.h"
-#include "slikenet/alloca.h"
+#include "slikenet/slikeAlloca.h"
 
 using namespace SLNet;
 

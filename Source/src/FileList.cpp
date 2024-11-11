@@ -72,7 +72,7 @@ using namespace SLNet;
 #include <stdint.h> //defines intptr_t
 #endif
 
-#include "slikenet/alloca.h"
+#include "..\include\slikenet\slikeAlloca.h"
 
 //int RAK_DLL_EXPORT FileListNodeComp( char * const &key, const FileListNode &data )
 //{

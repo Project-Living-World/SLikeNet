@@ -28,7 +28,7 @@
 #include "slikenet/statistics.h"
 #include "slikenet/IncrementalReadInterface.h"
 #include "..\include\slikenet\slikeAssert.h"
-#include "slikenet/alloca.h"
+#include "..\include\slikenet\slikeAlloca.h"
 
 namespace SLNet
 {

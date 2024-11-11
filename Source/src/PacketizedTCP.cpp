@@ -21,7 +21,7 @@
 #include "slikenet/NativeTypes.h"
 #include "slikenet/BitStream.h"
 #include "slikenet/MessageIdentifiers.h"
-#include "slikenet/alloca.h"
+#include "..\include\slikenet\slikeAlloca.h"
 
 using namespace SLNet;
 
