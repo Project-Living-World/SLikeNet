@@ -3,7 +3,7 @@
  *  All rights reserved.
  *
  *  This source code is licensed under the BSD-style license found in the
- *  RakNet License.txt file in the licenses directory of this source tree. An additional grant 
+ *  RakNet License.txt file in the licenses directory of this source tree. An additional grant
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
@@ -17,10 +17,10 @@
 #if _RAKNET_SUPPORT_MessageFilter==1
 
 #include "slikenet/MessageFilter.h"
-#include "..\include\slikenet\slikeAssert.h"
+#include "slikenet/slikeAssert.h"
 #include "slikenet/GetTime.h"
 #include "slikenet/MessageIdentifiers.h"
-#include "..\include\slikenet\slikeAssert.h"
+#include "slikenet/slikeAssert.h"
 #include "slikenet/peerinterface.h"
 #include "slikenet/PacketizedTCP.h"
 #include "slikenet/BitStream.h"
@@ -161,7 +161,7 @@ void MessageFilter::SetSystemFilterSet(AddressOrGUID addressOrGUID, int filterSe
 		{
 			systemList.RemoveAtIndex(index, _FILE_AND_LINE_);
 		}
-	}	
+	}
 }
 unsigned MessageFilter::GetSystemCount(int filterSetID) const
 {
@@ -355,7 +355,7 @@ void MessageFilter::OnClosedConnection(const SystemAddress &systemAddress, RakNe
 	DataStructures::HashIndex index;
 	unsigned char messageId;
 
-	switch (packet->data[0]) 
+	switch (packet->data[0])
 	{
 	case ID_NEW_INCOMING_CONNECTION:
 	case ID_CONNECTION_REQUEST_ACCEPTED:
@@ -405,10 +405,10 @@ void MessageFilter::OnClosedConnection(const SystemAddress &systemAddress, RakNe
 				return RR_STOP_PROCESSING_AND_DEALLOCATE;
 			}
 		}
-		
+
 		break;
 	}
-	
+
 	return RR_CONTINUE_PROCESSING;
 }
 

@@ -3,7 +3,7 @@
  *  All rights reserved.
  *
  *  This source code is licensed under the BSD-style license found in the
- *  RakNet License.txt file in the licenses directory of this source tree. An additional grant 
+ *  RakNet License.txt file in the licenses directory of this source tree. An additional grant
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
@@ -21,7 +21,7 @@
 #include "slikenet/statistics.h"
 #include <stdio.h> // sprintf
 #include "slikenet/GetTime.h"
-#include "..\include\slikenet\slikeString.h"
+#include "slikenet/slikeString.h"
 #include "slikenet/linux_adapter.h"
 #include "slikenet/osx_adapter.h"
 
@@ -247,7 +247,7 @@ void RAK_DLL_EXPORT SLNet::StatisticsToString( RakNetStatistics *s, char *buffer
 				);
 			strcat_s(buffer,bufferLength,buff2);
 		}
-	}	
+	}
 	else
 	{
 		sprintf_s(buffer, bufferLength,

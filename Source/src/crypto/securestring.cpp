@@ -8,7 +8,7 @@
 
 // #med - review the include order - defines.h defines SLNET_VERIFY but doesn't enforce including slikeAssert.h which it honestly should
 #include "slikenet/crypto/cryptomanager.h" // used for CCryptoManager
-#include "..\..\include\slikenet\slikeAssert.h"               // used for assert() (via SLNET_VERIFY)
+#include "slikenet/slikeAssert.h"               // used for assert() (via SLNET_VERIFY)
 #include "slikenet/memoryoverride.h"       // used for OP_NEW_ARRAY
 
 #include <cstring> // used for std::memcpy

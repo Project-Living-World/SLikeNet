@@ -3,7 +3,7 @@
  *  All rights reserved.
  *
  *  This source code is licensed under the BSD-style license found in the
- *  RakNet License.txt file in the licenses directory of this source tree. An additional grant 
+ *  RakNet License.txt file in the licenses directory of this source tree. An additional grant
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
@@ -18,7 +18,7 @@
 ///
 
 #include "slikenet/SocketLayer.h"
-#include "..\include\slikenet\slikeAssert.h"
+#include "slikenet/slikeAssert.h"
 #include "slikenet/types.h"
 #include "slikenet/peer.h"
 #include "slikenet/GetTime.h"
@@ -99,7 +99,7 @@ void PrepareAddrInfoHints(addrinfo *hints)
 	hints->ai_flags = AI_PASSIVE;     // fill in my IP for me
 }
 #endif
- 
+
 void SocketLayer::SetSocketOptions( __UDPSOCKET__ listenSocket, bool blockingSocket, bool setBroadcast)
 {
 #ifdef __native_client__
@@ -159,7 +159,7 @@ void SocketLayer::SetSocketOptions( __UDPSOCKET__ listenSocket, bool blockingSoc
 	}
 #endif
 }
- 
+
 SLNet::RakString SocketLayer::GetSubNetForSocketAndIp(__UDPSOCKET__ inSock, SLNet::RakString inIpString)
 {
 	SLNet::RakString netMaskString;
@@ -438,7 +438,7 @@ void SocketLayer::GetSystemAddress ( __UDPSOCKET__ s, SystemAddress *systemAddre
 		memcpy(&systemAddressOut->address.addr4,(sockaddr_in *)&ss,sizeof(sockaddr_in));
 		systemAddressOut->debugPort=ntohs(systemAddressOut->address.addr4.sin_port);
 
-		uint32_t zero = 0;		
+		uint32_t zero = 0;
 		if (memcmp(&systemAddressOut->address.addr4.sin_addr.s_addr, &zero, sizeof(zero))==0)
 			systemAddressOut->SetToLoopback(4);
 		//	systemAddressOut->address.addr4.sin_port=ntohs(systemAddressOut->address.addr4.sin_port);
@@ -479,7 +479,7 @@ bool SocketLayer::GetFirstBindableIP(char firstBindable[128], int ipProto)
 	{
 		ipList[0].ToString(false,firstBindable,static_cast<size_t>(128));
 		return true;
-	}		
+	}
 
 	// Find the first valid host address
 	unsigned int l;

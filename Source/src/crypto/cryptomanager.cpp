@@ -6,7 +6,7 @@
 */
 #include "slikenet/crypto/cryptomanager.h"
 
-#include "..\..\include\slikenet\slikeAssert.h" // used for RakAssert
+#include "slikenet/slikeAssert.h" // used for RakAssert
 #include <limits>            // used for std::numeric_limits<>
 
 // prevent max/min macros getting defined (breaking numeric_limits<>::max() / ::min() usage) through the indirect windows.h include in the OpenSSL includes

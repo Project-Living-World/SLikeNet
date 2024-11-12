@@ -3,7 +3,7 @@
  *  All rights reserved.
  *
  *  This source code is licensed under the BSD-style license found in the
- *  RakNet License.txt file in the licenses directory of this source tree. An additional grant 
+ *  RakNet License.txt file in the licenses directory of this source tree. An additional grant
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
@@ -19,7 +19,7 @@
 #include "slikenet/Router2.h"
 #include "slikenet/peerinterface.h"
 #include "slikenet/BitStream.h"
-#include "..\include\slikenet\slikeTime.h"
+#include "slikenet/slikeTime.h"
 #include "slikenet/GetTime.h"
 #include "slikenet/DS_OrderedList.h"
 #include "slikenet/SocketLayer.h"
@@ -195,7 +195,7 @@ bool Router2::ConnectInternal(RakNetGUID endpointGuid, bool returnConnectionLost
         		char buff[512];
         		debugInterface->ShowDiagnostic(FormatStringTS(buff,"Router2::ConnectInternal: at %s:%i [else ..].: %I64d==%I64d", __FILE__, __LINE__,
         			guids[i].g,endpointGuid.g));
-        	}                                                                                              
+        	}
 		}
 	}
 	connectionRequestsMutex.Lock();
@@ -425,7 +425,7 @@ void Router2::Update(void)
 			connectionRequest->connectionRequestSystemsMutex.Unlock();
 
 			if (anyRemoved)
-			{				
+			{
 				if (connectionRequestIndex!=(unsigned int)-1)
 				{
 					// connectionRequestsMutex should be locked before calling this function
@@ -503,7 +503,7 @@ void Router2::OnClosedConnection(const SystemAddress &systemAddress, RakNetGUID 
 			unsigned int pos = GetConnectionRequestIndex(forwardedConnectionList[forwardedConnectionIndex].endpointGuid);
 			if((unsigned int)-1 != pos) { SLNet::OP_DELETE(connectionRequests[pos], __FILE__, __LINE__); connectionRequests.RemoveAtIndexFast(pos);}
 			connectionRequestsMutex.Unlock();
-            
+
 			ConnectInternal(forwardedConnectionList[forwardedConnectionIndex].endpointGuid, true);
 
 			forwardedConnectionIndex++;
@@ -554,7 +554,7 @@ void Router2::OnClosedConnection(const SystemAddress &systemAddress, RakNetGUID 
 //                     connectionRequestsMutex.Lock();
 //                     connectionRequests.RemoveAtIndexFast(connectionRequestIndex);
 //                     connectionRequestsMutex.Unlock();
-// 
+//
 //                     if(false == ConnectInternal(cr->endpointGuid,cr->returnConnectionLostOnFailure))
 //                         if (debugInterface)
 //                         {
@@ -562,7 +562,7 @@ void Router2::OnClosedConnection(const SystemAddress &systemAddress, RakNetGUID 
 //                             debugInterface->ShowDiagnostic(FormatStringTS(buff,"ConnectInternal(cr->endpointGuid,cr->returnConnectionLostOnFailure) is false. at %s:%i\n", __FILE__, __LINE__));
 //                         }
 //                 }
-                        
+
 				connectionRequestIndex++;
 			}
 		}
@@ -745,7 +745,7 @@ void Router2::RequestForwarding(ConnnectRequest* connectionRequest)
 	{
 		char buff[512];
 		debugInterface->ShowDiagnostic(FormatStringTS(buff,"Sending ID_ROUTER_2_REQUEST_FORWARDING "
-            "(connectionRequest->lastRequestedForwardingSystem = %I64d, connectionRequest->endpointGuid = %I64d) at %s:%i\n", 
+            "(connectionRequest->lastRequestedForwardingSystem = %I64d, connectionRequest->endpointGuid = %I64d) at %s:%i\n",
             connectionRequest->lastRequestedForwardingSystem.g,connectionRequest->endpointGuid.g, __FILE__, __LINE__));
 	}
 }
@@ -764,7 +764,7 @@ int Router2::ReturnFailureOnCannotForward(RakNetGUID sourceGuid, RakNetGUID endp
 	if (udpForwarder==0 || udpForwarder->GetUsedForwardEntries()/2>maximumForwardingRequests)
 	{
 		char buff[512];
-		if (debugInterface)	debugInterface->ShowFailure(FormatStringTS(buff,"Router2 failed (%I64d -> %I64d) at %s:%i\n", 
+		if (debugInterface)	debugInterface->ShowFailure(FormatStringTS(buff,"Router2 failed (%I64d -> %I64d) at %s:%i\n",
                    sourceGuid.g, endpointGuid.g,__FILE__, __LINE__));
 		SendFailureOnCannotForward(sourceGuid,endpointGuid);
 		return -1;
@@ -774,7 +774,7 @@ int Router2::ReturnFailureOnCannotForward(RakNetGUID sourceGuid, RakNetGUID endp
 	forwardedConnectionListMutex.Lock();
 	for (unsigned int i=0; i < forwardedConnectionList.Size(); i++)
 	{
-		if ((forwardedConnectionList[i].endpointGuid==endpointGuid) 
+		if ((forwardedConnectionList[i].endpointGuid==endpointGuid)
 			|| (forwardedConnectionList[i].endpointGuid==sourceGuid)) // sourceGuid is here so you do not respond to routing requests from systems you are already routing through.
 		{
 			forwardedConnectionListMutex.Unlock();
@@ -792,7 +792,7 @@ int Router2::ReturnFailureOnCannotForward(RakNetGUID sourceGuid, RakNetGUID endp
 	if (pingToEndpoint==-1)
 	{
 		char buff[512];
-		if (debugInterface)	debugInterface->ShowFailure(FormatStringTS(buff,"Router2 failed (%I64d -> %I64d)  at %s:%i\n", 
+		if (debugInterface)	debugInterface->ShowFailure(FormatStringTS(buff,"Router2 failed (%I64d -> %I64d)  at %s:%i\n",
             sourceGuid.g, endpointGuid.g,__FILE__, __LINE__));
 
 		SendFailureOnCannotForward(sourceGuid,endpointGuid);
@@ -977,7 +977,7 @@ void Router2::SendOOBMessages(Router2::MiniPunchRequest *mpr)
         mpr->endpointAddress .ToString(true,buff2,static_cast<size_t>(128));
 
         debugInterface->ShowDiagnostic(FormatStringTS(buff,"call SendOOBFromSpecifiedSocket(...,%s,...)", buff2));
-    }                                              
+    }
 
 	// Tell source to send to forwardingPort
 	SLNet::BitStream extraData;
@@ -1002,7 +1002,7 @@ void Router2::OnRequestForwarding(Packet *packet)
 	if (pingToEndpoint==-1)
 	{
 		char buff[512];
-		if (debugInterface)	debugInterface->ShowFailure(FormatStringTS(buff,"Router2 failed (packet->guid =%I64d, endpointGuid = %I64d) at %s:%i\n", 
+		if (debugInterface)	debugInterface->ShowFailure(FormatStringTS(buff,"Router2 failed (packet->guid =%I64d, endpointGuid = %I64d) at %s:%i\n",
                 packet->guid.g, endpointGuid.g, __FILE__, __LINE__));
 		return;
 	}
@@ -1020,7 +1020,7 @@ void Router2::OnRequestForwarding(Packet *packet)
 		{
 			char buff[512];
 			debugInterface->ShowDiagnostic(FormatStringTS(buff,"Got ID_ROUTER_2_REQUEST_FORWARDING, result=UDPFORWARDER_FORWARDING_ALREADY_EXISTS "
-                    "(packet->guid =%I64d, endpointGuid = %I64d) at %s:%i\n", 
+                    "(packet->guid =%I64d, endpointGuid = %I64d) at %s:%i\n",
                 packet->guid.g, endpointGuid.g,__FILE__, __LINE__));
 		}
 
@@ -1072,7 +1072,7 @@ void Router2::OnRequestForwarding(Packet *packet)
 			packet->systemAddress.ToString(true,buff3,static_cast<size_t>(32));
 			char buff[512];
 			debugInterface->ShowDiagnostic(FormatStringTS(buff,"Got ID_ROUTER_2_REQUEST_FORWARDING.\n"
-				"endpointAddress=%s\nsourceAddress=%s\nforwardingPort=%i\n "				
+				"endpointAddress=%s\nsourceAddress=%s\nforwardingPort=%i\n "
 				"calling SendOOBMessages at %s:%i\n", buff2,buff3,forwardingPort,_FILE_AND_LINE_));
 		}
 
@@ -1107,7 +1107,7 @@ void Router2::OnMiniPunchReplyBounce(Packet *packet)
 	if (debugInterface)
 	{
 		char buff[512];
-		debugInterface->ShowDiagnostic(FormatStringTS(buff,"Got ID_ROUTER_2_MINI_PUNCH_REPLY_BOUNCE from guid=%I64d (miniPunchesInProgress.Size() = %d)", 
+		debugInterface->ShowDiagnostic(FormatStringTS(buff,"Got ID_ROUTER_2_MINI_PUNCH_REPLY_BOUNCE from guid=%I64d (miniPunchesInProgress.Size() = %d)",
 			packet->guid.g, miniPunchesInProgress.Size()));
 	}
 

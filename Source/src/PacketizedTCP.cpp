@@ -3,7 +3,7 @@
  *  All rights reserved.
  *
  *  This source code is licensed under the BSD-style license found in the
- *  RakNet License.txt file in the licenses directory of this source tree. An additional grant 
+ *  RakNet License.txt file in the licenses directory of this source tree. An additional grant
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
@@ -21,7 +21,7 @@
 #include "slikenet/NativeTypes.h"
 #include "slikenet/BitStream.h"
 #include "slikenet/MessageIdentifiers.h"
-#include "..\include\slikenet\slikeAlloca.h"
+#include "slikenet/slikeAlloca.h"
 
 using namespace SLNet;
 
@@ -91,7 +91,7 @@ bool PacketizedTCP::SendList( const char **data, const unsigned int *lengths, co
 #else
 	dataLength=totalLengthOfUserData;
 #endif
-	
+
 
 	unsigned int lengthsArray[512];
 	const char *dataArray[512];
@@ -101,7 +101,7 @@ bool PacketizedTCP::SendList( const char **data, const unsigned int *lengths, co
 	{
 		dataArray[i+1]=data[i];
 		lengthsArray[i+1]=lengths[i];
-	}	
+	}
 	return TCPInterface::SendList(dataArray,lengthsArray,std::min(numParameters, 511)+1,systemAddress,broadcast);
 }
 void PacketizedTCP::PushNotificationsToQueues(void)
@@ -183,7 +183,7 @@ Packet* PacketizedTCP::Receive( void )
 				// Header indicates packet length. If enough data is available, read out and return one packet
 				if (bq->GetBytesWritten()>=dataLength+sizeof(PTCPHeader))
 				{
-					do 
+					do
 					{
 						bq->IncrementReadOffset(sizeof(PTCPHeader));
 						outgoingPacket = SLNet::OP_NEW<Packet>(_FILE_AND_LINE_);

@@ -3,7 +3,7 @@
  *  All rights reserved.
  *
  *  This source code is licensed under the BSD-style license found in the
- *  RakNet License.txt file in the licenses directory of this source tree. An additional grant 
+ *  RakNet License.txt file in the licenses directory of this source tree. An additional grant
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
@@ -29,8 +29,8 @@ static const CCTimeType SYN=10000;
 #include <stdio.h>
 #include <cmath>
 #include <stdlib.h>
-#include "..\include\slikenet\slikeAssert.h"
-#include "..\include\slikenet\slikeAlloca.h"
+#include "slikenet/slikeAssert.h"
+#include "slikenet/slikeAlloca.h"
 
 using namespace SLNet;
 
@@ -129,7 +129,7 @@ bool CCRakNetSlidingWindow::OnGotPacket(DatagramSequenceNumberType datagramSeque
 	if (datagramSequenceNumber == expectedNextSequenceNumber) {
 		*skippedMessageCount = 0;
 		expectedNextSequenceNumber = datagramSequenceNumber + (DatagramSequenceNumberType) 1;
-		
+
 	} else if (GreaterThan(datagramSequenceNumber, expectedNextSequenceNumber)) {
 		*skippedMessageCount = datagramSequenceNumber - expectedNextSequenceNumber;
 		// Sanity check, just use timeout resend if this was really valid
@@ -141,7 +141,7 @@ bool CCRakNetSlidingWindow::OnGotPacket(DatagramSequenceNumberType datagramSeque
 			*skippedMessageCount = 1000;
 		}
 		expectedNextSequenceNumber = datagramSequenceNumber + (DatagramSequenceNumberType) 1;
-		
+
 	} else {
 		*skippedMessageCount=0;
 	}
@@ -191,7 +191,7 @@ void CCRakNetSlidingWindow::OnAck(CCTimeType curTime, CCTimeType rtt, bool hasBA
 	(void) hasBAndAS;
 	(void) curTime;
 	(void) rtt;
-	
+
 	lastRtt = (double) rtt;
 	if (estimatedRTT == UNSET_TIME_US) {
 		estimatedRTT = (double) rtt;
@@ -202,32 +202,32 @@ void CCRakNetSlidingWindow::OnAck(CCTimeType curTime, CCTimeType rtt, bool hasBA
 		estimatedRTT = estimatedRTT + d * difference;
 		deviationRtt = deviationRtt + d * (std::abs(difference) - deviationRtt);
 	}
-	
+
 	_isContinuousSend = isContinuousSend;
-	
+
 	if (isContinuousSend == false) return;
-	
+
 	bool isNewCongestionControlPeriod;
 	isNewCongestionControlPeriod = GreaterThan(sequenceNumber, nextCongestionControlBlock);
-	
+
 	if (isNewCongestionControlPeriod) {
 		backoffThisBlock = false;
 		speedUpThisBlock = false;
 		nextCongestionControlBlock = nextDatagramSequenceNumber;
 	}
-	
+
 	if (IsInSlowStart()) {
 		cwnd += MAXIMUM_MTU_INCLUDING_UDP_HEADER;
 		if (cwnd > ssThresh && ssThresh != 0) {
 			cwnd = ssThresh + MAXIMUM_MTU_INCLUDING_UDP_HEADER * MAXIMUM_MTU_INCLUDING_UDP_HEADER / cwnd;
 		}
-		
+
 		// CC PRINTF
 		//	printf("++ %.0f Slow start increase.\n", cwnd);
-		
+
 	} else if (isNewCongestionControlPeriod) {
 		cwnd += MAXIMUM_MTU_INCLUDING_UDP_HEADER * MAXIMUM_MTU_INCLUDING_UDP_HEADER / cwnd;
-		
+
 		// CC PRINTF
 		// printf("+ %.0f Congestion avoidance increase.\n", cwnd);
 	}
@@ -298,7 +298,7 @@ uint32_t CCRakNetSlidingWindow::GetMTU(void) const {
 // ----------------------------------------------------------------------------------------------------------------------------
 BytesPerMicrosecond CCRakNetSlidingWindow::GetLocalReceiveRate(CCTimeType currentTime) const {
 	(void) currentTime;
-	
+
 	return 0; // TODO
 }
 // ----------------------------------------------------------------------------------------------------------------------------

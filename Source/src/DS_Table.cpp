@@ -3,7 +3,7 @@
  *  All rights reserved.
  *
  *  This source code is licensed under the BSD-style license found in the
- *  RakNet License.txt file in the licenses directory of this source tree. An additional grant 
+ *  RakNet License.txt file in the licenses directory of this source tree. An additional grant
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
@@ -16,8 +16,8 @@
 #include "slikenet/DS_Table.h"
 #include "slikenet/DS_OrderedList.h"
 #include <string.h>
-#include "..\include\slikenet\slikeAssert.h"
-#include "..\include\slikenet\slikeAssert.h"
+#include "slikenet/slikeAssert.h"
+#include "slikenet/slikeAssert.h"
 #include "slikenet/Itoa.h"
 #include "slikenet/linux_adapter.h"
 #include "slikenet/osx_adapter.h"
@@ -104,7 +104,7 @@ void Table::Cell::Set(int input)
 void Table::Cell::Set(const char *input)
 {
 	Clear();
-		
+
 	if (input)
 	{
 		i=(int)strlen(input)+1;
@@ -1094,7 +1094,7 @@ unsigned Table::GetAvailableRowId(void) const
 	unsigned key=0;
 	int i;
 	DataStructures::Page<unsigned, Row*, _TABLE_BPLUS_TREE_ORDER> *cur = rows.GetListHead();
-	
+
 	while (cur)
 	{
 		for (i=0; i < cur->size; i++)

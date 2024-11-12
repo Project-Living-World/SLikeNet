@@ -3,7 +3,7 @@
  *  All rights reserved.
  *
  *  This source code is licensed under the BSD-style license found in the
- *  RakNet License.txt file in the licenses directory of this source tree. An additional grant 
+ *  RakNet License.txt file in the licenses directory of this source tree. An additional grant
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
@@ -23,7 +23,7 @@
 #include "slikenet/FullyConnectedMesh2.h"
 #include "slikenet/peerinterface.h"
 #include "slikenet/MessageIdentifiers.h"
-#include "..\include\slikenet\slikeAssert.h"
+#include "slikenet/slikeAssert.h"
 #include "slikenet/GetTime.h"
 #include "slikenet/Rand.h"
 #include "slikenet/DS_OrderedList.h"
@@ -366,7 +366,7 @@ void FullyConnectedMesh2::OnClosedConnection(const SystemAddress &systemAddress,
 
 			fcm2ParticipantList.Pop();
 			if (rakNetGUID==hostRakNetGuid && ourFCMGuid!=0)
-			{	
+			{
 				if (fcm2ParticipantList.Size()==0)
 				{
 					hostRakNetGuid=rakPeerInterface->GetMyGUID();
@@ -794,7 +794,7 @@ void FullyConnectedMesh2::StartVerifiedJoin(RakNetGUID client)
 	{
 		bsOut.Write(fcm2ParticipantList[i]->rakNetGuid);
 		bsOut.Write(rakPeerInterface->GetSystemAddressFromGuid(fcm2ParticipantList[i]->rakNetGuid));
-		
+
 		BitStream vjsOut;
 		//WriteVJSUserData(&vjsOut, fcm2ParticipantList[i]->rakNetGuid, &fcm2ParticipantList[i]->userContext );
 		WriteVJSUserData(&vjsOut, fcm2ParticipantList[i]->rakNetGuid );
@@ -856,18 +856,18 @@ void FullyConnectedMesh2::RespondOnVerifiedJoinCapable(Packet *packet, bool acce
 
 	RakAssert(participatingMembersOnClientFailed.Size()==0);
 	RakAssert(participatingMembersNotOnClient.Size()==0);
-	
+
 	SLNet::BitStream bsOut;
 	if (accept)
 	{
 		bsOut.Write((MessageID)ID_FCM2_VERIFIED_JOIN_ACCEPTED);
 		bsOut.Write(packet->guid);
-		
-		// Tell client to disconnect from clientMembersNotParticipatingSucceeded 
+
+		// Tell client to disconnect from clientMembersNotParticipatingSucceeded
 		bsOut.WriteCasted<unsigned short>(clientMembersNotParticipatingSucceeded.Size());
 		for (unsigned int i=0; i < clientMembersNotParticipatingSucceeded.Size(); i++)
 			bsOut.Write(clientMembersNotParticipatingSucceeded[i]);
-		
+
 		// Tell client to call AddParticipant() for participatingMembersOnClientSucceeded
 		bsOut.WriteCasted<unsigned short>(participatingMembersOnClientSucceeded.Size());
 		for (unsigned int i=0; i < participatingMembersOnClientSucceeded.Size(); i++)
@@ -1200,7 +1200,7 @@ void FullyConnectedMesh2::OnVerifiedJoinFailed(RakNetGUID hostGuid, bool callClo
 			SLNet::OP_DELETE(joinsInProgress[curIndex]->vjipMembers[j].userData, _FILE_AND_LINE_);
 		}
 	}
-	
+
 
 	// Clear joinsInProgress for packet->guid
 	SLNet::OP_DELETE(joinsInProgress[curIndex], _FILE_AND_LINE_);

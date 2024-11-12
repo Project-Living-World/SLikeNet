@@ -3,7 +3,7 @@
  *  All rights reserved.
  *
  *  This source code is licensed under the BSD-style license found in the
- *  RakNet License.txt file in the licenses directory of this source tree. An additional grant 
+ *  RakNet License.txt file in the licenses directory of this source tree. An additional grant
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
@@ -16,7 +16,7 @@
 #include "slikenet/DS_HuffmanEncodingTree.h"
 #include "slikenet/DS_Queue.h"
 #include "slikenet/BitStream.h"
-#include "..\include\slikenet\slikeAssert.h" 
+#include "slikenet/slikeAssert.h"
 
 using namespace SLNet;
 
@@ -167,7 +167,7 @@ void HuffmanEncodingTree::GenerateFromFrequencyTable( unsigned int frequencyTabl
 
 // Pass an array of bytes to array and a preallocated BitStream to receive the output
 void HuffmanEncodingTree::EncodeArray( unsigned char *input, size_t sizeInBytes, SLNet::BitStream * output )
-{		
+{
 	unsigned counter;
 
 	// For each input byte, Write out the corresponding series of 1's and 0's that give the encoded representation

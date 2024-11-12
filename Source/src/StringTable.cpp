@@ -3,7 +3,7 @@
  *  All rights reserved.
  *
  *  This source code is licensed under the BSD-style license found in the
- *  RakNet License.txt file in the licenses directory of this source tree. An additional grant 
+ *  RakNet License.txt file in the licenses directory of this source tree. An additional grant
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
@@ -15,7 +15,7 @@
 
 #include "slikenet/StringTable.h"
 #include <string.h>
-#include "..\include\slikenet\slikeAssert.h"
+#include "slikenet/slikeAssert.h"
 #include <stdio.h>
 #include "slikenet/BitStream.h"
 #include "slikenet/StringCompressor.h"
@@ -34,7 +34,7 @@ int SLNet::StrAndBoolComp( char *const &key, const StrAndBool &data )
 
 StringTable::StringTable()
 {
-	
+
 }
 
 StringTable::~StringTable()
@@ -91,8 +91,8 @@ void StringTable::AddString(const char *str, bool copyString)
 	orderedStringList.Insert(sab.str,sab, true, _FILE_AND_LINE_);
 
 	// If this assert hits you need to increase the range of StringTableType
-	RakAssert(orderedStringList.Size() < (StringTableType)-1);	
-	
+	RakAssert(orderedStringList.Size() < (StringTableType)-1);
+
 }
 void StringTable::EncodeString( const char *input, int maxCharsToWrite, SLNet::BitStream *output )
 {
@@ -140,7 +140,7 @@ bool StringTable::DecodeString( char *output, int maxCharsToWrite, SLNet::BitStr
 #endif
 			return false;
 		}
-		
+
 		strncpy_s(output, maxCharsToWrite, orderedStringList[index].str, maxCharsToWrite);
 		output[maxCharsToWrite-1]=0;
 	}

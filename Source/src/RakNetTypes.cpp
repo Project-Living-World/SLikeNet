@@ -3,7 +3,7 @@
  *  All rights reserved.
  *
  *  This source code is licensed under the BSD-style license found in the
- *  RakNet License.txt file in the licenses directory of this source tree. An additional grant 
+ *  RakNet License.txt file in the licenses directory of this source tree. An additional grant
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
@@ -17,7 +17,7 @@
 ///
 
 #include "slikenet/types.h"
-#include "..\include\slikenet\slikeAssert.h"
+#include "slikenet/slikeAssert.h"
 #include <string.h>
 #include <stdio.h>
 #include "slikenet/WindowsIncludes.h"
@@ -395,7 +395,7 @@ void SystemAddress::ToString_New(bool writePort, char *dest, size_t destLength, 
 		strcpy_s(dest, destLength, "UNASSIGNED_SYSTEM_ADDRESS");
 		return;
 	}
-	
+
 	if (address.addr4.sin_family==AF_INET)
 	{
 		ret=getnameinfo((struct sockaddr *) &address.addr4, sizeof(struct sockaddr_in), dest, 22, nullptr, 0, NI_NUMERICHOST);
@@ -643,7 +643,7 @@ bool SystemAddress::FromString(const char *str, char portDelineator, int ipVersi
 			return false;
 	}
 	RakAssert(servinfo);
-	
+
 	unsigned short oldPort = address.addr4.sin_port;
 #if RAKNET_SUPPORT_IPV6==1
 	if (servinfo->ai_family == AF_INET)

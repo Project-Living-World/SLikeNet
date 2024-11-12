@@ -3,7 +3,7 @@
  *  All rights reserved.
  *
  *  This source code is licensed under the BSD-style license found in the
- *  RakNet License.txt file in the licenses directory of this source tree. An additional grant 
+ *  RakNet License.txt file in the licenses directory of this source tree. An additional grant
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
@@ -23,8 +23,8 @@
 #include "slikenet/TCPInterface.h"
 #include "slikenet/HTTPConnection.h"
 #include "slikenet/sleep.h"
-#include "..\include\slikenet\slikeString.h"
-#include "..\include\slikenet\slikeAssert.h"
+#include "slikenet/slikeString.h"
+#include "slikenet/slikeAssert.h"
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -182,7 +182,7 @@ void HTTPConnection::Update(void)
 					host.C_String(),
 					port);
 			}
-			
+
 		//	printf(request.C_String());
 	//		request.URLEncode();
 			tcp->Send(request.C_String(), (unsigned int) request.GetLength(), server,false);
@@ -209,7 +209,7 @@ RakString HTTPConnection::Read(void)
 	SLNet::RakString resultStr = results.Pop();
     // const char *start_of_body = strstr(resultStr.C_String(), "\r\n\r\n");
 	const char *start_of_body = strpbrk(resultStr.C_String(), "\001\002\003%");
-    
+
     if(start_of_body)
 		return SLNet::RakString::NonVariadic(start_of_body);
 	else
@@ -254,7 +254,7 @@ void HTTPConnection::ProcessTCPPacket(Packet *packet)
 		// provide a length header and supply that many bytes
 		if(
 			// Why was start_of_body here? Makes the GET command fail
-			// start_of_body && 
+			// start_of_body &&
 			connectionState == CS_PROCESSING)
 		{
 			/*
@@ -288,7 +288,7 @@ void HTTPConnection::ProcessTCPPacket(Packet *packet)
 					// No processing needed
 				}
 
-				
+
 			//}
 		}
 	}

@@ -3,7 +3,7 @@
  *  All rights reserved.
  *
  *  This source code is licensed under the BSD-style license found in the
- *  RakNet License.txt file in the licenses directory of this source tree. An additional grant 
+ *  RakNet License.txt file in the licenses directory of this source tree. An additional grant
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
@@ -14,7 +14,7 @@
  */
 
 #include "slikenet/thread.h"
-#include "..\include\slikenet\slikeAssert.h"
+#include "slikenet/slikeAssert.h"
 #include "slikenet/defines.h"
 #include "slikenet/sleep.h"
 #include "slikenet/memoryoverride.h"
@@ -61,7 +61,7 @@ int RakThread::Create( void* start_address( void* ), void *arglist, int priority
 #else
 	threadHandle = (HANDLE) _beginthreadex(nullptr, MAX_ALLOCA_STACK_ALLOCATION*2, start_address, arglist, 0, &threadID );
 #endif
-	
+
 	SetThreadPriority(threadHandle, priority);
 
 #if defined(WINDOWS_PHONE_8) || defined(WINDOWS_STORE_RT)

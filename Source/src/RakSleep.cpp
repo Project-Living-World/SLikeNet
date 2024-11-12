@@ -3,7 +3,7 @@
  *  All rights reserved.
  *
  *  This source code is licensed under the BSD-style license found in the
- *  RakNet License.txt file in the licenses directory of this source tree. An additional grant 
+ *  RakNet License.txt file in the licenses directory of this source tree. An additional grant
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
@@ -24,7 +24,7 @@
 
 #else
 #include <pthread.h>
-#include <slikeTime.h>
+#include "slikenet/slikeTime.h"
 #include <sys/time.h>
 pthread_mutex_t fakeMutex = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t fakeCond = PTHREAD_COND_INITIALIZER;
@@ -62,7 +62,7 @@ void RakSleep(unsigned int ms)
 	long nanoseconds = (ms - seconds * 1000) * 1000000;
 	timeToWait.tv_sec = now.tv_sec + seconds;
 	timeToWait.tv_nsec = now.tv_usec*1000 + nanoseconds;
-	
+
 	if (timeToWait.tv_nsec >= 1000000000)
 	{
 	        timeToWait.tv_nsec -= 1000000000;

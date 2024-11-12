@@ -3,7 +3,7 @@
  *  All rights reserved.
  *
  *  This source code is licensed under the BSD-style license found in the
- *  RakNet License.txt file in the licenses directory of this source tree. An additional grant 
+ *  RakNet License.txt file in the licenses directory of this source tree. An additional grant
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
@@ -15,7 +15,7 @@
 
 #include "slikenet/DataCompressor.h"
 #include "slikenet/DS_HuffmanEncodingTree.h"
-#include "..\include\slikenet\slikeAssert.h"
+#include "slikenet/slikeAssert.h"
 #include <string.h> // Use slikeString.h rather than memory.h for a console
 
 using namespace SLNet;
@@ -57,7 +57,7 @@ unsigned DataCompressor::DecompressAndAllocate(SLNet::BitStream * input, unsigne
 	unsigned int decompressedBytes;
 	unsigned int frequencyTable[ 256 ];
 	unsigned i;
-	
+
 	input->ReadCompressed(destinationSizeInBytes);
 	for (i=0; i < 256; i++)
 		input->ReadCompressed(frequencyTable[i]);

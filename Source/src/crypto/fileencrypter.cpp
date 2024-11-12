@@ -14,7 +14,7 @@
 #include <openssl/rsa.h> // used for RSA_xxxx
 
 #include "slikenet/crypto/cryptomanager.h" // used for SLNet::Experimental::Crypto::CCryptoManager
-#include "..\..\include\slikenet\slikeAssert.h"               // used for RakAssert
+#include "slikenet/slikeAssert.h"               // used for RakAssert
 
 #include "slikenet/linux_adapter.h" // used for strcpy_s
 #include "slikenet/osx_adapter.h"   // used for strcpy_s

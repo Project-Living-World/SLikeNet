@@ -3,7 +3,7 @@
  *  All rights reserved.
  *
  *  This source code is licensed under the BSD-style license found in the
- *  RakNet License.txt file in the licenses directory of this source tree. An additional grant 
+ *  RakNet License.txt file in the licenses directory of this source tree. An additional grant
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
@@ -35,9 +35,9 @@
 #include <pthread.h>
 #endif
 #include <string.h>
-#include "..\include\slikenet\slikeAssert.h"
+#include "slikenet/slikeAssert.h"
 #include <stdio.h>
-#include "..\include\slikenet\slikeAssert.h"
+#include "slikenet/slikeAssert.h"
 #include "slikenet/sleep.h"
 #include "slikenet/StringCompressor.h"
 #include "slikenet/StringTable.h"
@@ -246,7 +246,7 @@ bool TCPInterface::Start(unsigned short port, unsigned short maxIncomingConnecti
 
 	while (threadRunning.GetValue()==0)
 		RakSleep(0);
-	
+
 	unsigned int i;
 	for (i=0; i < messageHandlerList.Size(); i++)
 		messageHandlerList[i]->OnRakPeerStartup();
@@ -278,7 +278,7 @@ void TCPInterface::Stop(void)
 #ifdef _WIN32
 		shutdown__(listenSocket, SD_BOTH);
 
-#else		
+#else
 		shutdown__(listenSocket, SHUT_RDWR);
 #endif
 		closesocket__(listenSocket);
@@ -430,7 +430,7 @@ SystemAddress TCPInterface::Connect(const char* host, unsigned short remotePort,
 			failedConnectionAttempts.Push(s->systemAddress, _FILE_AND_LINE_ );
 		}
 		return UNASSIGNED_SYSTEM_ADDRESS;
-	}	
+	}
 }
 #if OPEN_SSL_CLIENT_SUPPORT==1
 void TCPInterface::StartSSLClient(SystemAddress systemAddress)
@@ -545,7 +545,7 @@ Packet* TCPInterface::Receive( void )
 			}
 		}
 	}
-	
+
 
 	return outgoingPacket;
 }
@@ -833,14 +833,14 @@ __TCPSOCKET__ TCPInterface::SocketConnect(const char* host, unsigned short remot
 		__TCPSOCKET__ sockfd = WinRTCreateStreamSocket(AF_INET, SOCK_STREAM, 0);
 	#else
 		__TCPSOCKET__ sockfd = socket__(AF_INET, SOCK_STREAM, 0);
-		if (sockfd < 0) 
+		if (sockfd < 0)
 			return 0;
 	#endif
 
 	memset(&serverAddress, 0, sizeof(serverAddress));
 	serverAddress.sin_family = AF_INET;
 	serverAddress.sin_port = htons( remotePort );
-	
+
 
 	if ( bindAddress && bindAddress[0] )
 	{
@@ -953,7 +953,7 @@ RAK_THREAD_DECLARATION(SLNet::ConnectionAttemptLoop)
 		tcpInterface->completedConnectionAttemptMutex.Lock();
 		tcpInterface->completedConnectionAttempts.Push(systemAddress, _FILE_AND_LINE_ );
 		tcpInterface->completedConnectionAttemptMutex.Unlock();
-	}	
+	}
 
 
 
@@ -1079,7 +1079,7 @@ RAK_THREAD_DECLARATION(SLNet::UpdateTCPInterfaceLoop)
 #endif
 
 
-			selectResult=(int) select__(largestDescriptor+1, &readFD, &writeFD, &exceptionFD, &tv);		
+			selectResult=(int) select__(largestDescriptor+1, &readFD, &writeFD, &exceptionFD, &tv);
 
 
 
@@ -1151,7 +1151,7 @@ RAK_THREAD_DECLARATION(SLNet::UpdateTCPInterfaceLoop)
 				RAKNET_DEBUG_PRINTF("Socket error %s on listening socket\n", err);
 #endif
 			}
-			
+
 			{
 				i=0;
 				while (i < sts->remoteClientsLength)
@@ -1183,7 +1183,7 @@ RAK_THREAD_DECLARATION(SLNet::UpdateTCPInterfaceLoop)
 //							inet_ntop(sts->remoteClients[i].systemAddress.address.addr4.sin_family, &in, ip, 65);
 // 							RAKNET_DEBUG_PRINTF("Socket error %i on %s:%i\n", err,ip, sts->remoteClients[i].systemAddress.GetPort() );
 // 						}
-// 						
+//
 // #endif
 						// Connection lost abruptly
 						SystemAddress *lostConnectionSystemAddress=sts->lostConnections.Allocate( _FILE_AND_LINE_ );
@@ -1200,11 +1200,11 @@ RAK_THREAD_DECLARATION(SLNet::UpdateTCPInterfaceLoop)
 							// if recv returns 0 this was a graceful close
 							len = sts->remoteClients[i].Recv(data,BUFF_SIZE);
 
-						
+
 							// removeme
 // 								data[len]=0;
 // 								printf(data);
-							
+
 							if (len>0)
 							{
 								incomingMessage=sts->incomingMessages.Allocate( _FILE_AND_LINE_ );
@@ -1272,7 +1272,7 @@ RAK_THREAD_DECLARATION(SLNet::UpdateTCPInterfaceLoop)
 							}
 							rc->outgoingDataMutex.Unlock();
 						}
-							
+
 						i++; // Nothing deleted so increment the index
 					}
 				}
@@ -1343,8 +1343,8 @@ bool RemoteClient::InitSSL(SSL_CTX* ctx, SSL_METHOD *meth)
 {
 	(void) meth;
 
-	ssl = SSL_new (ctx);                         
-	RakAssert(ssl);    
+	ssl = SSL_new (ctx);
+	RakAssert(ssl);
 	int res;
 	res = SSL_set_fd (ssl, socket);
 	if (res!=1)
@@ -1366,7 +1366,7 @@ bool RemoteClient::InitSSL(SSL_CTX* ctx, SSL_METHOD *meth)
 	}
 	else if (res==0)
 	{
-		// The TLS/SSL handshake was not successful but was shut down controlled and by the specifications of the TLS/SSL protocol. Call SSL_get_error() with the return value ret to find out the reason. 
+		// The TLS/SSL handshake was not successful but was shut down controlled and by the specifications of the TLS/SSL protocol. Call SSL_get_error() with the return value ret to find out the reason.
 		int err = SSL_get_error(ssl, res);
 		switch (err)
 		{

@@ -3,7 +3,7 @@
  *  All rights reserved.
  *
  *  This source code is licensed under the BSD-style license found in the
- *  RakNet License.txt file in the licenses directory of this source tree. An additional grant 
+ *  RakNet License.txt file in the licenses directory of this source tree. An additional grant
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
@@ -50,13 +50,13 @@
 #include "slikenet/types.h"
 #include "slikenet/DR_SHA1.h"
 #include "slikenet/sleep.h"
-#include "..\include\slikenet\slikeAssert.h"
+#include "slikenet/slikeAssert.h"
 #include "slikenet/version.h"
 #include "slikenet/NetworkIDManager.h"
 #include "slikenet/gettimeofday.h"
 #include "slikenet/SignaledEvent.h"
 #include "slikenet/SuperFastHash.h"
-#include "..\include\slikenet\slikeAlloca.h"
+#include "slikenet/slikeAlloca.h"
 #include "slikenet/WSAStartupSingleton.h"
 #include "slikenet/linux_adapter.h"
 #include "slikenet/osx_adapter.h"
@@ -184,7 +184,7 @@ Packet *RakPeer::AllocPacket(unsigned dataSize, unsigned char *data, const char 
 	return p;
 }
 
-STATIC_FACTORY_DEFINITIONS(RakPeerInterface,RakPeer) 
+STATIC_FACTORY_DEFINITIONS(RakPeerInterface,RakPeer)
 
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Constructor
@@ -1591,7 +1591,7 @@ Packet* RakPeer::Receive( void )
 				break;
 			}
 		}
-	
+
 	} while(packet==0);
 
 #ifdef _DEBUG
@@ -3018,7 +3018,7 @@ bool RakPeer::SendOutOfBand(const char *host, unsigned short remotePort, const c
 	{
 		bitStream.Write(data, dataLength);
 	}
-	
+
 	unsigned int realIndex = GetRakNetSocketFromUserConnectionSocketIndex(connectionSocketIndex);
 
 	/*
@@ -3029,7 +3029,7 @@ bool RakPeer::SendOutOfBand(const char *host, unsigned short remotePort, const c
 	unsigned i;
 	for (i=0; i < pluginListNTS.Size(); i++)
 		pluginListNTS[i]->OnDirectSocketSend((const char*)bitStream.GetData(), bitStream.GetNumberOfBitsUsed(), systemAddress);
-	
+
 	SocketLayer::SendTo( socketList[realIndex], (const char*)bitStream.GetData(), (int) bitStream.GetNumberOfBytesUsed(), systemAddress, _FILE_AND_LINE_ );
 	*/
 
@@ -4213,7 +4213,7 @@ void RakPeer::SendBuffered( const char *data, BitSize_t numberOfBitsToSend, Pack
 		bufferedCommands.Deallocate(bcs, _FILE_AND_LINE_);
 		return;
 	}
-	
+
 	RakAssert( !( reliability >= NUMBER_OF_RELIABILITIES || reliability < 0 ) );
 	RakAssert( !( priority > NUMBER_OF_PRIORITIES || priority < 0 ) );
 	RakAssert( !( orderingChannel >= NUMBER_OF_ORDERED_STREAMS ) );
@@ -4701,7 +4701,7 @@ bool ProcessOfflineNetworkPacket( SystemAddress systemAddress, const char *data,
 			SLNet::Time ping;
 			bsIn.Read(ping);
 			bsIn.Read(packet->guid);
-			
+
 			SLNet::BitStream bsOut((unsigned char*) packet->data, packet->length, false);
 			bsOut.ResetWritePointer();
 			bsOut.Write((unsigned char)ID_UNCONNECTED_PONG);
@@ -5755,11 +5755,11 @@ bool RakPeer::RunUpdateCycle(BitStream &updateBitStream )
 				{
 
 					int MTUSizeIndex = 0;
-					
+
 					if (rcs->sendConnectionAttemptCount/NUM_MTU_SIZES > 0) {
 						MTUSizeIndex = rcs->requestsMade / (rcs->sendConnectionAttemptCount/NUM_MTU_SIZES);
 					}
-					
+
 					if (MTUSizeIndex>=NUM_MTU_SIZES)
 						MTUSizeIndex=NUM_MTU_SIZES-1;
 					rcs->requestsMade++;
@@ -6266,7 +6266,7 @@ bool RakPeer::RunUpdateCycle(BitStream &updateBitStream )
 				// To be thread safe, this has to be called in the same thread as HandleSocketReceiveFromConnectedPlayer
 				bitSize = remoteSystem->reliabilityLayer.Receive( &data );
 			}
-		
+
 	}
 
 	return true;
@@ -6358,7 +6358,7 @@ RAK_THREAD_DECLARATION(SLNet::UpdateNetworkLoop)
 		+ cat::AuthenticatedEncryption::OVERHEAD_BYTES
 #endif
 		);
-// 
+//
 	rakPeer->isMainLoopThreadActive = true;
 
 	bool running = true;

@@ -3,7 +3,7 @@
  *  All rights reserved.
  *
  *  This source code is licensed under the BSD-style license found in the
- *  RakNet License.txt file in the licenses directory of this source tree. An additional grant 
+ *  RakNet License.txt file in the licenses directory of this source tree. An additional grant
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
@@ -22,7 +22,7 @@
 #include "slikenet/GetTime.h"
 #include "slikenet/SocketLayer.h"
 #include "slikenet/PluginInterface2.h"
-#include "..\include\slikenet\slikeAssert.h"
+#include "slikenet/slikeAssert.h"
 #include "slikenet/Rand.h"
 #include "slikenet/MessageIdentifiers.h"
 #ifdef USE_THREADED_SEND
@@ -452,7 +452,7 @@ void ReliabilityLayer::InitializeVariables()
 	memset( highestSequencedReadIndex, 0, NUMBER_OF_ORDERED_STREAMS * sizeof(OrderingIndexType) );
 	memset( &statistics, 0, sizeof( statistics ) );
 	memset( &heapIndexOffsets, 0, sizeof( heapIndexOffsets ) );
-	
+
 	statistics.connectionStartTime = SLNet::GetTimeUS();
 	splitPacketId = 0;
 	elapsedTimeSinceLastUpdate=0;
@@ -485,7 +485,7 @@ void ReliabilityLayer::InitializeVariables()
 
 	receivedPacketsBaseIndex=0;
 	resetReceivedPackets=true;
-	receivePacketCount=0; 
+	receivePacketCount=0;
 
 	//	SetPing( 1000 );
 
@@ -862,7 +862,7 @@ bool ReliabilityLayer::HandleSocketReceiveFromConnectedPlayer(
 // 				else if (isReliable) {
 // 					// Previously used slot, rather than empty unreliable slot
 // 					printf("%p Ack %i is duplicate\n", this, datagramNumber.val);
-// 
+//
 //  				congestionManager.OnDuplicateAck(timeRead, datagramNumber);
 // 				}
 			}
@@ -983,7 +983,7 @@ bool ReliabilityLayer::HandleSocketReceiveFromConnectedPlayer(
 				}
 
 				// Check for corrupt orderingChannel
-				if ( 
+				if (
 					internalPacket->reliability == RELIABLE_SEQUENCED ||
 					internalPacket->reliability == UNRELIABLE_SEQUENCED ||
 					internalPacket->reliability == RELIABLE_ORDERED
@@ -1526,7 +1526,7 @@ bool ReliabilityLayer::HandleSocketReceiveFromConnectedPlayer(
 						// Ignored, nothing to do
 						goto CONTINUE_SOCKET_DATA_PARSE_LOOP;
 					}
-					
+
 				}
 
 				bpsMetrics[(int) USER_MESSAGE_BYTES_RECEIVED_PROCESSED].Push1(timeRead,BITS_TO_BYTES(internalPacket->dataBitLength));
@@ -1840,7 +1840,7 @@ void ReliabilityLayer::UpdateInternal( RakNetSocket2 *s, SystemAddress &systemAd
 					{
 						// 						if (cur==end)
 						// 							break;
-						// 
+						//
 						// 						cur=cur->unreliableNext;
 
 						// They should be inserted in-order, so no need to iterate past the first failure
@@ -2114,7 +2114,7 @@ void ReliabilityLayer::UpdateInternal( RakNetSocket2 *s, SystemAddress &systemAd
 
 						The problem is that internally, message numbers are only assigned to reliable messages, because message numbers are only used to discard duplicate message receipt and only reliable messages get sent more than once. However, without message numbers getting assigned and transmitted, there is no way to tell the sender about which messages were discarded. In fact, in looking this over I realized that UNRELIABLE_SEQUENCED_WITH_ACK_RECEIPT introduced a bug, because the remote system assumes all message numbers are used (no holes). With that send type, on packetloss, a permanent hole would have been created which eventually would cause the system to discard all further packets.
 
-						So I have two options. Either do not support ack receipts when sending sequenced, or write complex and major new systems. UNRELIABLE_SEQUENCED_WITH_ACK_RECEIPT would need to send the message ID number on a special channel which allows for non-delivery. And both of them would need to have a special range list to indicate which message numbers were not delivered, so when acks are sent that can be indicated as well. A further problem is that the ack itself can be lost - it is possible that the message can arrive but be discarded, yet the ack is lost. On resend, the resent message would be ignored as duplicate, and you'd never get the discard message either (unless I made a special buffer for that case too). 
+						So I have two options. Either do not support ack receipts when sending sequenced, or write complex and major new systems. UNRELIABLE_SEQUENCED_WITH_ACK_RECEIPT would need to send the message ID number on a special channel which allows for non-delivery. And both of them would need to have a special range list to indicate which message numbers were not delivered, so when acks are sent that can be indicated as well. A further problem is that the ack itself can be lost - it is possible that the message can arrive but be discarded, yet the ack is lost. On resend, the resent message would be ignored as duplicate, and you'd never get the discard message either (unless I made a special buffer for that case too).
 */
 //						||
 						// If needs an ack receipt, keep the internal packet around in the list
@@ -2418,7 +2418,7 @@ bool ReliabilityLayer::IsOutgoingDataWaiting(void)
 	// 			return true;
 	// 	}
 
-	return 
+	return
 		//acknowlegements.Size() > 0 ||
 		//resendTree.IsEmpty()==false;// || outputQueue.Size() > 0 || orderingList.Size() > 0 || splitPacketChannelList.Size() > 0;
 		statistics.messagesInResendBuffer!=0;
@@ -2529,7 +2529,7 @@ unsigned ReliabilityLayer::RemovePacketFromResendListAndDeleteOlderReliableSeque
 // 	if (resendLinkedListHead)
 // 	{
 // 		InternalPacket *internalPacket = resendLinkedListHead;
-// 		do 
+// 		do
 // 		{
 // 			internalPacket=internalPacket->resendNext;
 // 			printf("%i ", internalPacket->reliableMessageNumber.val);
@@ -2554,7 +2554,7 @@ unsigned ReliabilityLayer::RemovePacketFromResendListAndDeleteOlderReliableSeque
 		totalUserDataBytesAcked+=(double) BITS_TO_BYTES(internalPacket->headerLength+internalPacket->dataBitLength);
 
 		// Return receipt if asked for
-		if (internalPacket->reliability>=RELIABLE_WITH_ACK_RECEIPT && 
+		if (internalPacket->reliability>=RELIABLE_WITH_ACK_RECEIPT &&
 			(internalPacket->splitPacketCount==0 || internalPacket->splitPacketIndex+1==internalPacket->splitPacketCount)
 			)
 		{
@@ -2624,7 +2624,7 @@ BitSize_t ReliabilityLayer::GetMaxMessageHeaderLengthBits( void )
 }
 //-------------------------------------------------------------------------------------------------------
 BitSize_t ReliabilityLayer::GetMessageHeaderLengthBits( const InternalPacket *const internalPacket )
-{	
+{
 	BitSize_t bitLength;
 
 	//	bitStream->AlignWriteToByteBoundary(); // Potentially unaligned
@@ -2830,7 +2830,7 @@ InternalPacket* ReliabilityLayer::CreateInternalPacketFromBitStream(SLNet::BitSt
 
 	const int maxPacketSize = 1024 * 1024 * 4;
 	const int maxPacketSplit = (maxPacketSize + (MINIMUM_MTU_SIZE - 1)) / MINIMUM_MTU_SIZE;
-	
+
 	if (readSuccess==false ||
 		internalPacket->dataBitLength==0 ||
 		internalPacket->reliability>=NUMBER_OF_RELIABILITIES ||
@@ -2917,9 +2917,9 @@ void ReliabilityLayer::DeleteSequencedPacketsInList( unsigned char orderingChann
 
 	while ( i < theList.Size() )
 	{
-		if ( ( 
+		if ( (
 			theList[ i ]->reliability == RELIABLE_SEQUENCED ||
-			theList[ i ]->reliability == UNRELIABLE_SEQUENCED 
+			theList[ i ]->reliability == UNRELIABLE_SEQUENCED
 //			||
 //			theList[ i ]->reliability == RELIABLE_SEQUENCED_WITH_ACK_RECEIPT ||
 //			theList[ i ]->reliability == UNRELIABLE_SEQUENCED_WITH_ACK_RECEIPT
@@ -3224,7 +3224,7 @@ void ReliabilityLayer::InsertIntoSplitPacketList( InternalPacket * internalPacke
 	// If the index is 0, then this is the first packet. Record this so it can be returned to the user with download progress
 	if (internalPacket->splitPacketIndex==0)
 		splitPacketChannelList[index]->firstPacket=internalPacket;
-	
+
 	// Return download progress if we have the first packet, the list is not complete, and there are enough packets to justify it
 	if (splitMessageProgressInterval &&
 		splitPacketChannelList[index]->firstPacket &&
@@ -3303,7 +3303,7 @@ InternalPacket * ReliabilityLayer::BuildPacketFromSplitPacketList( SplitPacketCh
 }
 //-------------------------------------------------------------------------------------------------------
 InternalPacket * ReliabilityLayer::BuildPacketFromSplitPacketList( SplitPacketIdType inSplitPacketId, CCTimeType time,
-																  RakNetSocket2 *s, SystemAddress &systemAddress, RakNetRandom *rnr, 
+																  RakNetSocket2 *s, SystemAddress &systemAddress, RakNetRandom *rnr,
 																  BitStream &updateBitStream)
 {
 	unsigned int i;
@@ -3314,7 +3314,7 @@ InternalPacket * ReliabilityLayer::BuildPacketFromSplitPacketList( SplitPacketId
 	// Find in splitPacketChannelList the SplitPacketChannel with this splitPacketId
 	i=splitPacketChannelList.GetIndexFromKey(inSplitPacketId, &objectExists);
 	splitPacketChannel=splitPacketChannelList[i];
-	
+
 #if PREALLOCATE_LARGE_MESSAGES==1
 	if (splitPacketChannel->splitPacketsArrived==splitPacketChannel->returnedPacket->splitPacketCount)
 #else
@@ -3821,11 +3821,11 @@ void ReliabilityLayer::ValidateResendList(void) const
 // 	for (unsigned int i=0; i < RESEND_BUFFER_ARRAY_LENGTH; i++)
 // 	if (resendBuffer[i])
 // 	count1++;
-// 
+//
 // 	if (resendLinkedListHead)
 // 	{
 // 	InternalPacket *internalPacket = resendLinkedListHead;
-// 	do 
+// 	do
 // 	{
 // 	count2++;
 // 	internalPacket=internalPacket->resendNext;
@@ -3912,7 +3912,7 @@ ReliabilityLayer::MessageNumberNode* ReliabilityLayer::AddSubsequentToDatagramHi
 	messageNumberNode->next=datagramHistoryMessagePool.Allocate(_FILE_AND_LINE_);
 	messageNumberNode->next->messageNumber=messageNumber;
 	messageNumberNode->next->next=0;
-	return messageNumberNode->next;		
+	return messageNumberNode->next;
 }
 //-------------------------------------------------------------------------------------------------------
 void ReliabilityLayer::AllocInternalPacketData(InternalPacket *internalPacket, InternalPacketRefCountedData **refCounter, unsigned char *externallyAllocatedPtr, unsigned char *ourOffset)

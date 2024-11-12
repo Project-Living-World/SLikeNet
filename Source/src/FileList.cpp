@@ -3,7 +3,7 @@
  *  All rights reserved.
  *
  *  This source code is licensed under the BSD-style license found in the
- *  RakNet License.txt file in the licenses directory of this source tree. An additional grant 
+ *  RakNet License.txt file in the licenses directory of this source tree. An additional grant
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
@@ -18,7 +18,7 @@
 #if _RAKNET_SUPPORT_FileOperations==1
 
 #include <stdio.h> // RAKNET_DEBUG_PRINTF
-#include "..\include\slikenet\slikeAssert.h"
+#include "slikenet/slikeAssert.h"
 #if defined(ANDROID)
 #include <asm/io.h>
 #elif defined(_WIN32) || defined(__CYGWIN__)
@@ -30,7 +30,7 @@
 #endif
 
 
-#ifdef _WIN32 
+#ifdef _WIN32
 // For mkdir
 #include <direct.h>
 
@@ -45,7 +45,7 @@
 #include "slikenet/BitStream.h"
 #include "slikenet/FileOperations.h"
 #include "slikenet/SuperFastHash.h"
-#include "..\include\slikenet\slikeAssert.h"
+#include "slikenet/slikeAssert.h"
 #include "slikenet/LinuxStrings.h"
 #include "slikenet/linux_adapter.h"
 #include "slikenet/osx_adapter.h"
@@ -72,7 +72,7 @@ using namespace SLNet;
 #include <stdint.h> //defines intptr_t
 #endif
 
-#include "..\include\slikenet\slikeAlloca.h"
+#include "slikenet/slikeAlloca.h"
 
 //int RAK_DLL_EXPORT FileListNodeComp( char * const &key, const FileListNode &data )
 //{
@@ -92,14 +92,14 @@ void FLP_Printf::OnAddFilesFromDirectoryStarted(FileList *fileList, char *dir) {
 /// Called for each directory, when that directory begins processing
 void FLP_Printf::OnDirectory(FileList *fileList, char *dir, unsigned int directoriesRemaining) {
 	(void) fileList;
-	RAKNET_DEBUG_PRINTF("Adding %s. %i remaining.\n", dir, directoriesRemaining);}	
+	RAKNET_DEBUG_PRINTF("Adding %s. %i remaining.\n", dir, directoriesRemaining);}
 void FLP_Printf::OnFilePushesComplete( SystemAddress systemAddress, unsigned short setID )
 {
 	(void) setID;
 
 	char str[32];
 	systemAddress.ToString(true, (char*) str, static_cast<size_t>(32));
-	RAKNET_DEBUG_PRINTF("File pushes complete to %s\n", str);	
+	RAKNET_DEBUG_PRINTF("File pushes complete to %s\n", str);
 }
 void FLP_Printf::OnSendAborted( SystemAddress systemAddress )
 {
@@ -222,7 +222,7 @@ void FileList::AddFile(const char *filename, const char *fullPathToFile, const c
 		n.context.dataLength=dataLength;
 	n.filename=filename;
 	n.fullPathToFile=fullPathToFile;
-		
+
 	fileList.Insert(n, _FILE_AND_LINE_);
 }
 void FileList::AddFilesFromDirectory(const char *applicationDirectory, const char *subDirectory, bool writeHash, bool writeData, bool recursive, FileListNodeContext context)
@@ -254,7 +254,7 @@ void FileList::AddFilesFromDirectory(const char *applicationDirectory, const cha
 	}
 	else
 		dirSoFar[0]=0;
-	
+
 	if (subDirectory)
 	{
 		strcat_s(dirSoFar, 520, subDirectory);
@@ -295,7 +295,7 @@ void FileList::AddFilesFromDirectory(const char *applicationDirectory, const cha
                     {
                         continue;
                     }
-                    
+
 			if ((fileInfo.attrib & (_A_HIDDEN | _A_SUBDIR | _A_SYSTEM))==0)
 			{
 				strcpy_s(fullPath, dirSoFar);
@@ -325,7 +325,7 @@ void FileList::AddFilesFromDirectory(const char *applicationDirectory, const cha
 						//					memcpy(fileData, sha1.GetHash(), HASH_LENGTH);
 						// File data and hash
 						AddFile((const char*)fullPath+rootLen, fullPath, fileData, fileInfo.size+HASH_LENGTH, fileInfo.size, context);
-					}					
+					}
 				}
 				else if (writeHash)
 				{
@@ -424,7 +424,7 @@ bool FileList::Deserialize(SLNet::BitStream *inBitStream)
 #endif
 	if (b==false || fileListSize > 10000)
 		return false; // Sanity check
-	Clear();	
+	Clear();
 	unsigned i;
 	for (i=0; i < fileListSize; i++)
 	{
@@ -453,7 +453,7 @@ bool FileList::Deserialize(SLNet::BitStream *inBitStream)
 			n.dataLengthBytes=0;
 			n.data=0;
 		}
-		
+
 		b=inBitStream->Read(fileLenMatchesDataLen);
 		if (fileLenMatchesDataLen)
 			n.fileLengthBytes=(unsigned) n.dataLengthBytes;
@@ -684,7 +684,7 @@ void FileList::PopulateDataFromDisk(const char *applicationDirectory, bool write
 				fileList.RemoveAtIndex(i);
 			}
 			else
-				i++;			
+				i++;
 		}
 	}
 }
@@ -706,7 +706,7 @@ void FileList::WriteDataToDisk(const char *applicationDirectory)
 		strcpy_s(fullPath, applicationDirectory);
 		FixEndingSlash(fullPath, 512);
 		strcat_s(fullPath,fileList[i].filename.C_String());
-		
+
 		// Security - Don't allow .. in the filename anywhere so you can't write outside of the root directory
 		for (j=1; j < fileList[i].filename.GetLength(); j++)
 		{
@@ -750,7 +750,7 @@ void FileList::DeleteFiles(const char *applicationDirectory)
 		strcpy_s(fullPath, applicationDirectory);
 		FixEndingSlash(fullPath, 512);
 		strcat_s(fullPath, fileList[i].filename.C_String());
-	
+
 		// Do not rename to _unlink as linux uses unlink
 #if defined(_WIN32)
 		int result = _unlink(fullPath);

@@ -3,7 +3,7 @@
  *  All rights reserved.
  *
  *  This source code is licensed under the BSD-style license found in the
- *  RakNet License.txt file in the licenses directory of this source tree. An additional grant 
+ *  RakNet License.txt file in the licenses directory of this source tree. An additional grant
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
@@ -17,7 +17,7 @@
 #include "slikenet/DS_Table.h"
 #include "slikenet/BitStream.h"
 #include "slikenet/StringCompressor.h"
-#include "..\include\slikenet\slikeAssert.h"
+#include "slikenet/slikeAssert.h"
 
 using namespace SLNet;
 
@@ -59,7 +59,7 @@ void TableSerializer::SerializeColumns(DataStructures::Table *in, SLNet::BitStre
 		{
 			StringCompressor::Instance()->EncodeString(columns[i].columnName, _TABLE_MAX_COLUMN_NAME_LENGTH, out);
 			out->Write((unsigned char)columns[i].columnType);
-		}		
+		}
 	}
 }
 bool TableSerializer::DeserializeTable(unsigned char *serializedTable, unsigned int dataLength, DataStructures::Table *out)

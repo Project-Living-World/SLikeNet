@@ -3,7 +3,7 @@
  *  All rights reserved.
  *
  *  This source code is licensed under the BSD-style license found in the
- *  RakNet License.txt file in the licenses directory of this source tree. An additional grant 
+ *  RakNet License.txt file in the licenses directory of this source tree. An additional grant
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
@@ -20,7 +20,7 @@
 #include "slikenet/peerinterface.h"
 #include "slikenet/BitStream.h"
 #include "slikenet/MessageIdentifiers.h"
-#include "..\include\slikenet\slikeAssert.h"
+#include "slikenet/slikeAssert.h"
 
 using namespace SLNet;
 
@@ -82,7 +82,7 @@ void ReadyEvent::ForceCompletion(int eventId)
 		CreateNewEvent(eventId, true);
 		eventIndex = readyEventNodeList.GetIndexFromKey(eventId, &objectExists);
 	}
-	
+
 	ReadyEventNode *ren = readyEventNodeList[eventIndex];
 	ren->eventStatus=ID_READY_EVENT_FORCE_ALL_SET;
 	UpdateReadyStatus(eventIndex);
@@ -264,7 +264,7 @@ ReadyEventSystemStatus ReadyEvent::GetReadyStatus(int eventId, RakNetGUID guid)
 		ReadyEventNode *ren = readyEventNodeList[readyIndex];
 		unsigned systemIndex = ren->systemList.GetIndexFromKey(guid, &objectExists);
 		if (objectExists==false)
-			return RES_NOT_WAITING;		
+			return RES_NOT_WAITING;
 		if (ren->systemList[systemIndex].lastReceivedStatus==ID_READY_EVENT_SET)
 			return RES_READY;
 		if (ren->systemList[systemIndex].lastReceivedStatus==ID_READY_EVENT_UNSET)
@@ -515,7 +515,7 @@ void ReadyEvent::SendReadyUpdate(unsigned eventIndex, unsigned systemIndex, bool
 
 		ren->systemList[systemIndex].lastSentStatus=ren->eventStatus;
 	}
-	
+
 }
 void ReadyEvent::BroadcastReadyUpdate(unsigned eventIndex, bool forceIfNotDefault)
 {
@@ -541,11 +541,11 @@ void ReadyEvent::RemoveFromAllLists(RakNetGUID guid)
 		bool isCompleted = IsEventCompletedByIndex(eventIndex);
 		bool systemExists;
 		unsigned systemIndex;
-		
+
 		systemIndex = readyEventNodeList[eventIndex]->systemList.GetIndexFromKey(guid, &systemExists);
 		if (systemExists)
 			readyEventNodeList[eventIndex]->systemList.RemoveAtIndex(systemIndex);
-	
+
 		UpdateReadyStatus(eventIndex);
 
 		if (isCompleted==false && IsEventCompletedByIndex(eventIndex))

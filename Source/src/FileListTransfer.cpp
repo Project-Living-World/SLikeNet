@@ -3,7 +3,7 @@
  *  All rights reserved.
  *
  *  This source code is licensed under the BSD-style license found in the
- *  RakNet License.txt file in the licenses directory of this source tree. An additional grant 
+ *  RakNet License.txt file in the licenses directory of this source tree. An additional grant
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
@@ -27,8 +27,8 @@
 #include "slikenet/peerinterface.h"
 #include "slikenet/statistics.h"
 #include "slikenet/IncrementalReadInterface.h"
-#include "..\include\slikenet\slikeAssert.h"
-#include "..\include\slikenet\slikeAlloca.h"
+#include "slikenet/slikeAssert.h"
+#include "slikenet/slikeAlloca.h"
 
 namespace SLNet
 {
@@ -180,7 +180,7 @@ void FileListTransfer::Send(FileList *fileList, SLNet::RakPeerInterface *rakPeer
 			SendUnified(&outBitstream, priority, RELIABLE_ORDERED, orderingChannel, recipient, false);
 
 		DataStructures::Queue<FileToPush*> filesToPush;
-	
+
 		for (i=0; i < fileList->fileList.Size(); i++)
 		{
 			sendReference = fileList->fileList[i].isAReference && _incrementalReadInterface!=0;
@@ -492,7 +492,7 @@ bool FileListTransfer::DecodeFile(Packet *packet, bool isTheFullFile)
 }
 PluginReceiveResult FileListTransfer::OnReceive(Packet *packet)
 {
-	switch (packet->data[0]) 
+	switch (packet->data[0])
 	{
 	case ID_FILE_LIST_TRANSFER_HEADER:
 		DecodeSetHeader(packet);
@@ -529,7 +529,7 @@ void FileListTransfer::OnRakPeerShutdown(void)
 {
 	threadPool.StopThreads();
 	threadPool.ClearInput();
-	Clear();	
+	Clear();
 }
 void FileListTransfer::Clear(void)
 {
@@ -770,7 +770,7 @@ void FileListTransfer::OnReferencePush(Packet *packet, bool isTheFullFile)
 	{
 		mb=fileListReceiver->pushedFiles.Get(onFileStruct.fileIndex);
 	}
-	
+
 	unsigned int unreadBits = inBitStream.GetNumberOfUnreadBits();
 	unsigned int unreadBytes = BITS_TO_BYTES(unreadBits);
 	unsigned int amountToRead;
@@ -827,7 +827,7 @@ void FileListTransfer::OnReferencePush(Packet *packet, bool isTheFullFile)
 	if (chunkLength==0)
 		currentNotificationIndex = 0;
 	else
-		currentNotificationIndex = offset / chunkLength; 
+		currentNotificationIndex = offset / chunkLength;
 
 	fps.onFileStruct=&onFileStruct;
 	fps.partCount=currentNotificationIndex;
@@ -945,7 +945,7 @@ int SendIRIToAddressCB(FileListTransfer::ThreadData threadData, bool *returnOutp
 	*returnOutput=false;
 
 	// Was previously using GetStatistics to get outgoing buffer size, but TCP with UnifiedSend doesn't have this
-	unsigned int bytesRead;	
+	unsigned int bytesRead;
 	const char *dataBlocks[2];
 	int lengths[2];
 	unsigned int smallFileTotalSize=0;
@@ -1156,7 +1156,7 @@ unsigned int FileListTransfer::GetPendingFilesToAddress(SystemAddress recipient)
 		}
 	}
 	fileToPushRecipientListMutex.Unlock();
-	
+
 	return 0;
 }
 

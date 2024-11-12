@@ -3,7 +3,7 @@
  *  All rights reserved.
  *
  *  This source code is licensed under the BSD-style license found in the
- *  RakNet License.txt file in the licenses directory of this source tree. An additional grant 
+ *  RakNet License.txt file in the licenses directory of this source tree. An additional grant
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
@@ -19,7 +19,7 @@
 
 #include "slikenet/NetworkIDManager.h"
 #include "slikenet/NetworkIDObject.h"
-#include "..\include\slikenet\slikeAssert.h"
+#include "slikenet/slikeAssert.h"
 #include "slikenet/GetTime.h"
 #include "slikenet/sleep.h"
 #include "slikenet/SuperFastHash.h"
@@ -92,7 +92,7 @@ void NetworkIDManager::TrackNetworkIDObject(NetworkIDObject *networkIdObject)
 	RakAssert(nio->GetNetworkID()!=rawId);
 
 	while (nio->nextInstanceForNetworkIDManager!=0)
-	{		
+	{
 		nio=nio->nextInstanceForNetworkIDManager;
 
 		// Duplicate insertion?

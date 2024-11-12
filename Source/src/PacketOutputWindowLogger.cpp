@@ -3,7 +3,7 @@
  *  All rights reserved.
  *
  *  This source code is licensed under the BSD-style license found in the
- *  RakNet License.txt file in the licenses directory of this source tree. An additional grant 
+ *  RakNet License.txt file in the licenses directory of this source tree. An additional grant
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
@@ -21,7 +21,7 @@
 #endif
 
 #include "slikenet/PacketOutputWindowLogger.h"
-#include "..\include\slikenet\slikeString.h"
+#include "slikenet/slikeString.h"
 #if defined(_WIN32)
 #include "slikenet/WindowsIncludes.h"
 #endif

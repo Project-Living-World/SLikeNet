@@ -3,7 +3,7 @@
  *  All rights reserved.
  *
  *  This source code is licensed under the BSD-style license found in the
- *  RakNet License.txt file in the licenses directory of this source tree. An additional grant 
+ *  RakNet License.txt file in the licenses directory of this source tree. An additional grant
  *  of patent rights can be found in the RakNet Patents.txt file in the same directory.
  *
  *
@@ -19,8 +19,8 @@
 
 #include "slikenet/NetworkIDObject.h"
 #include "slikenet/NetworkIDManager.h"
-#include "..\include\slikenet\slikeAssert.h"
-#include "..\include\slikenet\slikeAlloca.h"
+#include "slikenet/slikeAssert.h"
+#include "slikenet/slikeAlloca.h"
 
 using namespace SLNet;
 
@@ -50,7 +50,7 @@ void NetworkIDObject::SetNetworkIDManager( NetworkIDManager *manager)
 		networkID = UNASSIGNED_NETWORK_ID;
 		return;
 	}
-	
+
 	if (networkID == UNASSIGNED_NETWORK_ID)
 	{
 		// Prior ID not set
